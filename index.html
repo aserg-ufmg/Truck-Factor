@@ -23,11 +23,11 @@
 
 <p>We calculate the Truck Factor for 133 popular GitHub applications, in  six languages: JavaScript (22 systems), Python (22 systems), Ruby (33 systems) , C/C++ (18 systems), Java (21 systems), and PHP (17 systems). We also used <a href="https://github.com/github/linguist">github/linguist</a> to discard non-source code files (e.g., documentation) and also third-party files.</p>
 
-<p>We define an <em>author</em> as a developer able to command the implementation of a file. To infer the authors of a file we used the Degree-of-Authorship (DOA) metric, proposed by Thomas Fritz et al. in this <a href="http://dl.acm.org/citation.cfm?id=1806856">paper</a>. According to this metric, the degree-of-authorship of a developer <em>d</em> in a file <em>f</em> depends on three factors: first authorship (FA), number of deliveries (DL), and number of acceptances (AC). We consider only normalized DOA values. For a file <em>f</em>, the normalized DOA ranges from 0 to 1, where 1 is granted to the developer with the highest absolute DOA. We consider that a developer <em>d</em> is an author of a file <em>f</em> if its normalized DOA is greater than 0.75.</p>
+<p>We define an <em>author</em> as a developer able to command the implementation of a file. To infer the authors of a file we used the Degree-of-Authorship (DOA) metric, proposed by Thomas Fritz et al. in this <a href="http://dl.acm.org/citation.cfm?id=1806856">paper</a>. The degree-of-authorship of a developer <em>d</em> in a file <em>f</em> depends on three factors: first authorship (FA), number of deliveries (DL), and number of acceptances (AC). We consider only normalized DOA values. For a file <em>f</em>, the normalized DOA ranges from 0 to 1, where 1 is granted to the developer with the highest absolute DOA. We consider that a developer <em>d</em> is an author of a file <em>f</em> if its normalized DOA is greater than 0.75.</p>
 
-<p>To calculate the truck factor, we use a greedy algorithm: we consecutively remove the author with more authored files in a system, until more than 50% of the system's files are orphan (i.e., without author). We consider that a system is in trouble if more than 50% of its files are orphans.</p>
+<p>To calculate the truck factor, we use a greedy heuristic: we consecutively remove the author with more authored files in a system, until more than 50% of the system's files are orphans (i.e., without author). We are considering that a system is in trouble if more than 50% of its files are orphans.</p>
 
-<p>The following list presents the Truck Factors (TF) we calculated:</p>
+<p>This list presents the Truck Factors (TF) we calculated:</p>
 
 <ul>
 <li><p><strong>TF = 1</strong>: activeadmin/activeadmin, alexreisner/geocoder, atom/atom-shell, bjorn/tiled,
