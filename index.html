@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Truck-factor by mtov</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Truck-factor</h1>
+          <h2>Calculating the Truck-Fator of Popular GitHub Applications</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/mtov/Truck-Factor/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/mtov/Truck-Factor/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/mtov/Truck-Factor" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p>The truck (or bus) factor designates the minimal number of developers that would have to be hit by a truck (or quit) before a project is incapacitated.  The <a href="https://en.wikipedia.org/wiki/Bus_factor">Wikipedia</a> defines that it "is a measurement of the concentration of information in individual team members. A high bus factor means that many individuals know enough to carry on and the project could still succeed even in very adverse events."</p>
+
+<p>We calculated the Truck Nimber for 133 popular GitHub applications. </p>
+
+<p>We define an <em>author</em> as a developer able to influence or command the implementation of a file. To infer the authors of a file we used the Degree-of-Authorship (DOA) metric, proposed by Thomas Fritz et al. in this <a href="http://dl.acm.org/citation.cfm?id=1806856">paper</a>. According to this metric, the degree of authorship of a developer d in a file f depends on three factors: first authorship (FA), number of deliveries (DL), and number of acceptances (AC).We consider only normalized DOA values. For a file <em>f</em>, the normalized DOA ranges from 0 to 1, where 1 is granted to the developer with the highest absolute DOA. We consider that a developer <em>d</em> is an author of a file <em>f</em> if its normalized DOA is greater than 0.75.</p>
+
+<p>To calculate the truck factor, we used a greedy algorithm: we consecutively removed the author with more authored files in a system, until more than 50% of the system's files become orphan (i.e., without author). Therefore, we consinder that a system would be in trouble if more than 50% of its files become orphan.</p>
+
+<p>The following list presents the Truck Numbers we calculated:</p>
+
+<ul>
+<li><p>TF = 1: activeadmin/activeadmin, alexreisner/geocoder, atom/atom-shell, bjorn/tiled,
+bumptech/glide, caskroom/homebrew-cask, celery/celery, celluloid/celluloid,
+clojure/clojure, codemirror/CodeMirror, dropwizard/dropwizard, dropwizard/metrics, elasticsearch/logstash, erikhuda/thor, Eugeny/ajenti, getsentry/sentry, github/android, gruntjs/grunt, jadejs/jade, janl/mustache.js, jnicklas/capybara, jrburke/requirejs, justinfrench/formtastic, kivy/kivy, koush/ion,
+kriswallsmith/assetic, Leaflet/Leaflet, less/less.js, mailpile/Mailpile, mbostock/d3,
+meskyanichi/backup, mitchellh/vagrant, mitsuhiko/flask, mongoid/mongoid,
+nate-parrott/Flashlight, netty/netty, nicolasgramlich/AndEngine, 
+omab/django-social-auth, openframeworks/openFrameworks, paulasmuth/fnordmetric, phacility/phabricator, plataformatec/devise
+powerline/powerline, puphpet/puphpet, pydata/pandas, ratchetphp/Ratchet,
+ReactiveX/RxJava, sampsyo/beets, sandstorm-io/capnproto, sass/sass,
+sebastianbergmann/phpunit, sferik/twitter, silexphp/Silex, sparklemotion/nokogiri,
+sstephenson/sprockets, strongloop/express, substack/node-browserify,
+ThinkUpLLC/ThinkUp, thoughtbot/factory_girl, thoughtbot/paperclip, wp-cli/wp-cli</p></li>
+<li><p>TF = 2: ajaxorg/ace, ansible/ansible, apache/cassandra, bbatsov/rubocop, bundler/bundler
+bup/bup, composer/composer, cucumber/cucumber, divio/django-cms
+driftyco/ionic, drupal/drupal, elasticsearch/elasticsearch, excilys/androidannotations, facebook/osquery, facebook/presto, FriendsOfPHP/PHP-CS-Fixer, github/linguist, haml/haml, Itseez/opencv, jashkenas/backbone, jekyll/jekyll, JohnLangford/vowpal_wabbit, jquery/jquery-ui
+libgdx/libgdx, moment/moment, mozilla/pdf.js, mrdoob/three.js, prawnpdf/prawn
+Respect/Validation, rg3/youtube-dl, SFTtech/openage, 
+spring-projects/spring-framework, thinkaurelius/titan, thumbor/thumbor
+WordPress/WordPress, xetorthio/jedis, yiisoft/yii2</p></li>
+<li><p>TF = 3: bitcoin/bitcoin, boto/boto, BVLC/caffe, gradle/gradle, ipython/ipython
+jquery/jquery, meteor/meteor, Shopify/active_merchant, spotify/luigi</p></li>
+<li><p>TF = 4:chef/chef, cocos2d/cocos2d-x, emberjs/ember.js, iojs/io.js, ruby/ruby</p></li>
+<li><p>TF = x: diaspora/diaspora, django/django, joomla/joomla-cms, resque/resque, TryGhost/Ghost</p></li>
+<li><p>TF = x: puppetlabs/puppet, scikit-learn/scikit-learn</p></li>
+<li><p>TF = x: rails/rails</p></li>
+<li><p>TF = x: git/git ,JetBrains/intellij-community, Seldaek/monolog, v8/v8, webscalesql/webscalesql-5.6</p></li>
+<li><p>TF = x: saltstack/salt</p></li>
+<li><p>TF = x: fog/fog</p></li>
+<li><p>TF = x: odoo/odoo, php/php-src</p></li>
+<li><p>TF = x: android/platform_frameworks_base</p></li>
+<li><p>TF = x: fzaninotto/Faker</p></li>
+<li><p>TF = x: torvalds/linux</p></li>
+<li><p>TF = x: Homebrew/homebrew</p></li>
+</ul>
+        </section>
+
+        <footer>
+          Truck-factor is maintained by <a href="https://github.com/mtov">mtov</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
