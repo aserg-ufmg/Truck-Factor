@@ -25,7 +25,7 @@
 
 <p>We define an <em>author</em> as a developer able to influence or command the implementation of a file. To infer the authors of a file we used the Degree-of-Authorship (DOA) metric, proposed by Thomas Fritz et al. in this <a href="http://dl.acm.org/citation.cfm?id=1806856">paper</a>. According to this metric, the degree of authorship of a developer d in a file f depends on three factors: first authorship (FA), number of deliveries (DL), and number of acceptances (AC).We consider only normalized DOA values. For a file <em>f</em>, the normalized DOA ranges from 0 to 1, where 1 is granted to the developer with the highest absolute DOA. We consider that a developer <em>d</em> is an author of a file <em>f</em> if its normalized DOA is greater than 0.75.</p>
 
-<p>To calculate the truck factor, we used a greedy algorithm: we consecutively removed the author with more authored files in a system, until more than 50% of the system's files become orphan (i.e., without author). Therefore, we consinder that a system would be in trouble if more than 50% of its files become orphan.</p>
+<p>To calculate the truck factor, we used a greedy algorithm: we consecutively removed the author with more authored files in a system, until more than 50% of the system's files become orphan (i.e., without author). We are consindering that a system is in trouble if more than 50% of its files becomes orphan.</p>
 
 <p>The following list presents the Truck Numbers we calculated:</p>
 
@@ -52,26 +52,26 @@ WordPress/WordPress, xetorthio/jedis, yiisoft/yii2</p></li>
 <li><p><strong>TF = 3</strong>: bitcoin/bitcoin, boto/boto, BVLC/caffe, gradle/gradle, ipython/ipython
 jquery/jquery, meteor/meteor, Shopify/active_merchant, spotify/luigi</p></li>
 <li><p><strong>TF = 4</strong>:chef/chef, cocos2d/cocos2d-x, emberjs/ember.js, iojs/io.js, ruby/ruby</p></li>
-<li><p><strong>TF = x</strong>: diaspora/diaspora, django/django, joomla/joomla-cms, resque/resque, TryGhost/Ghost</p></li>
-<li><p><strong>TF = x</strong>: puppetlabs/puppet, scikit-learn/scikit-learn</p></li>
-<li><p><strong>TF = x</strong>: rails/rails</p></li>
-<li><p><strong>TF = x</strong>: git/git ,JetBrains/intellij-community, Seldaek/monolog, v8/v8, webscalesql/webscalesql-5.6</p></li>
-<li><p><strong>TF = x</strong>: saltstack/salt</p></li>
-<li><p><strong>TF = x</strong>: fog/fog</p></li>
-<li><p>TF = x: odoo/odoo, php/php-src</p></li>
-<li><p>TF = x: android/platform_frameworks_base</p></li>
-<li><p>TF = x: fzaninotto/Faker</p></li>
-<li><p><strong>TF = x</strong>: torvalds/linux</p></li>
-<li><p>TF = x: Homebrew/homebrew</p></li>
+<li><p><strong>TF = 5</strong>: diaspora/diaspora, django/django, joomla/joomla-cms, resque/resque, TryGhost/Ghost</p></li>
+<li><p><strong>TF = 6</strong>: puppetlabs/puppet, scikit-learn/scikit-learn</p></li>
+<li><p><strong>TF = 7</strong>: rails/rails</p></li>
+<li><p><strong>TF = 8</strong>: git/git ,JetBrains/intellij-community, Seldaek/monolog, v8/v8, webscalesql/webscalesql-5.6</p></li>
+<li><p><strong>TF = 9</strong>: saltstack/salt</p></li>
+<li><p><strong>TF = 10</strong>: fog/fog</p></li>
+<li><p><strong>TF = 11</strong>: odoo/odoo, php/php-src</p></li>
+<li><p><strong>TF = 12</strong>: android/platform_frameworks_base</p></li>
+<li><p><strong>TF = 21</strong>: fzaninotto/Faker</p></li>
+<li><p><strong>TF = 90</strong>: torvalds/linux</p></li>
+<li><p><strong>TF = x</strong>: Homebrew/homebrew</p></li>
 </ul>
 
-<p>Our results  are summarized as follows:</p>
+<p>Our results are summarized as follows:</p>
 
 <ul>
 <li>Most systems have a small truck factor:</li>
 <li> 61 systems have TF=1 (46\%) , including popular systems like mbostock/d3, clojure/clojure; </li>
 <li><p>37 systems have TF=2 (28\%) , including popular systems like cucumber/cucumber, mrdoob/three.js, mozilla/pdf.js, spring-projects/spring-framework .</p></li>
-<li><p>The two systems with highest Truck Factor are:  torvalds/linux (TF = 90)and Homebrew/homebrew (TF = 159).  In fact, Linux is the largest system we analysed with xx files, xx developers, and xx authors.</p></li>
+<li><p>The two systems with highest Truck Factor are:  torvalds/linux (TF = 90)and Homebrew/homebrew (TF = 159).  </p></li>
 </ul>
 
       <footer class="site-footer">
