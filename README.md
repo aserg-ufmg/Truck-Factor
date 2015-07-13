@@ -1,2 +1,2 @@
 # Truck-Factor
-Calculating the Truck-Fator of Popular GitHub Applications
+Calculating the Truck-Factor of Popular GitHub Applications
