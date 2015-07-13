@@ -1,0 +1,69 @@
+Recent blog posts</title>
+<link>
+http://www.fsf.org/blogs/licensing/recent-blog-posts
+</link>
+<description>
+Writing by representatives of the Free Software Foundation.
+</description>
+<image rdf:resource="http://www.fsf.org/logo.png"/>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-joel-krahemann-maintainer-of-advanced-gtk-sequencer"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-many-headed-monster-of-international-trade-agreements"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/historical-permission-notice-and-disclaimer-added-to-license-list"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-francois-marier-creator-of-libravatar"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/why-doesnt-the-fsf-release-gpg-signed-copies-of-its-licenses"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/friday-free-software-directory-irc-meetup-may-1"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-matt-lee-from-the-list-powered-by-creative-commons"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/latest-tpp-leak-shows-systemic-threat-to-software-freedom"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/friday-free-software-directory-irc-meetup-april-17"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/friday-free-software-directory-irc-meetup-april-10"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/obama-and-congress-go-off-the-rails-trying-to-fast-track-tpp"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/cc-by-4-0-and-cc-by-sa-4-0-added-to-our-list-of-free-licenses"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-rainey-reitman-of-the-electronic-frontier-foundation"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-aaron-wolf-of-snowdrift.coop"/>
+<rdf:li rdf:resource="http://www.fsf.org/blogs/licensing/the-sharks-move-in-lobbyists-pushing-forward-on-tpp-agreements"/>
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-joel-krahemann-maintainer-of-advanced-gtk-sequencer">
+<title>
+The Licensing and Compliance Lab interviews Joël Krähemann, maintainer of Advanced GTK+ Sequencer
+</title>
+<link>
+http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-joel-krahemann-maintainer-of-advanced-gtk-sequencer
+</link>
+<description>
+This is the latest installment of our Licensing and Compliance Lab's series on free software developers who choose GNU licenses for their works.
+</description>
+<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<![CDATA[
+<p>In this edition, we conducted an IRC-based interview with Joël Krähemann, Maintainer of <a href="https://directory.fsf.org/wiki/Ags">Advanced GTK+ Sequencer</a>. Joël is an IT professional in Switzerland and works on music for fun. Advanced GTK+ Sequencer (AGS) is a an audio processing and composition tool.</p> <h2>What inspired you to create AGS?</h2> <p>I'm a long time GNU/Linux user and enthusiast. I had dislikes about <a href="https://directory.fsf.org/wiki/Rosegarden">Rosegarden</a> but it was you're only choice in 2002 to do composition on a free operating system. So, I decided to write new software. I chose to write it in C, because it is my favorite programming language, and further, GObject does a great job to do basic tasks for implementing a library.</p> <h2>What features do you think really set AGS apart from similar software?</h2> <p>For users, the modular GUI and multi-channel editing. For example, you may edit each audio channel on its own or as a group. Also, in the latest version there is also a new pattern editor. For developers, its atomic design, its multi-threaded capabilities, and that it is object orientated are what make it stand apart.</p> <h2>Why did you choose the GNU GPLv3 as the license for AGS?</h2> <p>It's evident software must be free in order the give you freedoms to share, learn or improve. I read the GNU GPL and decided it fit my needs.</p> <h2>How can people help contribute to AGS?</h2> <p>Contributing good code, good documentation, or reporting bugs is probably the best way someone can help to contribute. But, there are many other ways to contribute, like spreading the word.</p> <p>Right now, users need to <a href="http://gsequencer.org/download.html#loaded">download source code or binary distro packages</a> provided on the project's website. So getting distributions to provide those packages in their repositories would also be a good way to contribute.</p> <h2>What's the next big thing for AGS?</h2> <p>AGS 0.4.3 brings extended MIDI support and LV2 host implementation. Down the road, LibAGS 1.0 will be released, and it will give users users remote and scripting capabilities, as well desktop integration for GNU/Linux. </p> <p><em>Enjoy this interview? Check out our previous entry in this series, featuring <a href="http://www.fsf.org/blogs/licensing/the-licensing-and-compliance-lab-interviews-francois-marier-creator-of-libravatar/">François Marier, of Libravatar</a></em></p>
+]]>
+</content:encoded>
+<dc:publisher>No publisher</dc:publisher>
+<dc:creator/>
+<dc:rights/>
+<dc:subject>GPL-interview</dc:subject>
+<dc:date>2015-07-08T16:33:27Z</dc:date>
+<dc:type>Blog Entry</dc:type>
+</item>
+<item rdf:about="http://www.fsf.org/blogs/licensing/the-many-headed-monster-of-international-trade-agreements">
+<title>
+The many-headed monster of international trade agreements: TPP, TTIP, TISA, and CETA
+</title>
+<link>
+http://www.fsf.org/blogs/licensing/the-many-headed-monster-of-international-trade-agreements
+</link>
+<description>
+While the threat of TPP draws ever closer, there are other trade agreements on the horizon that will prove equally malicious to user freedom. Today is the day we must fight back.
+</description>
+<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<![CDATA[
+<p>We've been warning against the threat presented by the Trans-Pacific Partnership (TPP) negotiations, particularly over the past few months, given that <a href="https://www.fsf.org/blogs/licensing/latest-tpp-leak-shows-systemic-threat-to-software-freedom">time is running out to stop it</a>. For th
+]]>
+<![CDATA[
+e uninitiated, TPP is a secret treaty that would trap participating countries into laws that lock users down with DRM, software patents, and perpetual copyright restrictions. TPP will also give corporations the power to interfere with local policy decisions by suing governments if they try to pass a
+]]>
+<![CDATA[
+ny laws or regulations that protect users. The danger is particularly imminent in the U.S., where Congress is readying to grant the Obama administration Trade Promotion Authority (TPA), meaning that they would be giving up their right and duty to review and amend the worst parts of the eventual treaty before the terms of the deal have even been publicly released. The final vote in the Senate is set for tomorrow, June 24th, so today may be the last chance to stop TPA. That is why we've been pushing users here in the States so hard to fight back now. But the harm caused by granting TPA unfortunately isn't limited to what is hidden within the pages of TPP. Once granted, TPA lasts for years and would enable the same abrogation of duty when it comes to two other secret, international negotiations: the Transatlantic Trade and Investment Partnership (TTIP) and Trade In Services Agreement (TISA).</p> <p>TTIP is in many respects similar to TPP, and covers much of the same ground. But, whereas TPP covers agreements between the U.S. and many Asian countries, TTIP address similar issues between the U.S. and the European Union. Some documents have <a href="http://trade.ec.europa.eu/doclib/press/index.cfm?id=1230">been made public for these negotiations</a>, though the actual negotiation texts for the copyright and patents chapter is notably still secret. Despite that, we can still draw some disturbing conclusions. Like TPP, TTIP would grant proprietary developers supra-national power to interfere with local laws and policies in the form of investor-state dispute settlement (ISDS). TTIP also has provisions about software patents that could lock the U.S. and EU into their current terrible situation. Trying to end software patents locally is difficult enough already, but if TTIP passes, for signatory countries there may not be any way out. Ever fond of secrecy, the negotiators for TTIP are pushing a possible expansion of penalties relating to trade secrets.</p> <p>TISA has the potential for the most widespread impact, with Europe, the U.S., and many more countries negotiating in secret. A recent leak included a particularly nefarious term: a prohibition on governmental mandates for free software. Article 6 states that "No Party may require the transfer of, or access to, source code of software owned by a person of another Party, as a condition of providing services related to such software in its territory." Governments around the world have come to understand the importance of free software to ensuring a free society. Many governments have chosen to mandate the use of free software in their offices and in their software service contracts. Ensuring that government-used and -purchased software is free for anyone to review, share, and modify promotes the safety and security of the people. TISA would stop governments all around the world from putting into action their dedication to the principles of free software.</p> <p>Even if Article 6 were modified or interpreted more narrowly to allow free software mandates, it would still be extremely problematic.
