@@ -25,7 +25,7 @@
 
 <p>We define an <em>author</em> as a developer able to command the implementation of a file. To infer the authors of a file we used the Degree-of-Authorship (DOA) metric, proposed by Thomas Fritz et al. in this <a href="http://dl.acm.org/citation.cfm?id=1806856">paper</a>. The degree-of-authorship of a developer <em>d</em> in a file <em>f</em> depends on three factors: first authorship (FA), number of deliveries (DL), and number of acceptances (AC). We consider only normalized DOA values. For a file <em>f</em>, the normalized DOA ranges from 0 to 1, where 1 is granted to the developer with the highest absolute DOA. We consider that a developer <em>d</em> is an author of a file <em>f</em> if its normalized DOA is greater than 0.75.</p>
 
-<p>To calculate the truck factor, we use a greedy heuristic: we consecutively remove the author with more authored files in a system, until more than 50% of the system's files are orphans (i.e., without author). We are considering that a system is in trouble if more than 50% of its files are orphans.</p>
+<p>To calculate the truck factor, we use a greedy heuristic: we consecutively remove the author with more authored files in a system, until more than 50% of the system's files are orphans (i.e., without author). </p>
 
 <p>This list presents the Truck Factors (TF) we calculated:</p>
 
