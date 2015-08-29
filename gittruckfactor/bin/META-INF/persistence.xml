@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  
+  <persistence-unit name="main" transaction-type="RESOURCE_LOCAL">
+  
+  	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!--    <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+    <class>gaa.model.ProjectInfo</class>
+    <class>gaa.model.LanguageInfo</class>
+    <class>gaa.model.NewFileInfo</class>
+    <class>gaa.model.LogCommitInfo</class>
+    <class>gaa.model.LogCommitFileInfo</class>
+    <class>gaa.authorship.model.Repository</class>
+    <class>gaa.authorship.model.Developer</class>
+    <class>gaa.authorship.model.File</class>
+    <class>gaa.authorship.model.AuthorshipInfo</class>
+    <class>gaa.authorship.model.DeveloperAuthorshipInfo</class>
+    
+<!--     <class>gaa.model.GitRepository</class> -->
+
+    <properties>
+		
+
+		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+		
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gittruckfactor" />
+		<property name="javax.persistence.jdbc.user" value="gitdownloader" />
+		<property name="javax.persistence.jdbc.password" value="gitdownloader" />
+		
+<!-- 		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://icse.labsoft.dcc.ufmg.br:5432/gitdownloader" /> -->
+<!-- 		<property name="javax.persistence.jdbc.user" value="gitdownloader" /> -->
+<!-- 		<property name="javax.persistence.jdbc.password" value="gitdownloader" /> -->
+		
+<!-- 		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
+		
+<!-- 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gitdownloader" /> -->
+<!-- 		<property name="javax.persistence.jdbc.user" value="git" /> -->
+<!-- 		<property name="javax.persistence.jdbc.password" value="git" /> -->
+		
+<!-- 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://icse.labsoft.dcc.ufmg.br:3306/gitdownloader" /> -->
+<!-- 		<property name="javax.persistence.jdbc.user" value="gitdownloader" /> -->
+<!-- 		<property name="javax.persistence.jdbc.password" value="gitdownloader" /> -->
+		
+		<property name="eclipselink.logging.level" value="INFO"/>
+		
+<!-- 		<property name="eclipselink.ddl-generation.output-mode" value="database" /> -->
+		<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+<!-- 		<property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
+<!-- 		<property name="eclipselink.ddl-generation" value="create-tables" /> -->
+<!-- 		<property name="eclipselink.ddl-generation" value="none" /> -->
+    </properties>
+
+  </persistence-unit>
+</persistence> 

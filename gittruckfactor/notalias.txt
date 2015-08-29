@@ -1,0 +1,222 @@
+#REPOSITORY;NAME;ALIAS
+Leaflet/Leaflet;danzel;Daniel
+ajaxorg/ace;Robin;Robik
+ruby/ruby;nahi;nari
+ruby/ruby;kou;knu
+ruby/ruby;kou;ko1
+ruby/ruby;eban;evan
+jekyll/jekyll;Jon;jcon
+rails/rails;Nick;rick
+rails/rails;Nick;Nico
+Homebrew/homebrew;Ayed;Iyed
+Homebrew/homebrew;Daniel;daniele
+Homebrew/homebrew;mrb;mrf
+Homebrew/homebrew;mrb;wrb
+Homebrew/homebrew;sean;Stan
+Homebrew/homebrew;Ian Hill;Ian Will
+Homebrew/homebrew;Dan;Ian
+Homebrew/homebrew;Andrew;Andrey
+Homebrew/homebrew;bart;dbart
+Homebrew/homebrew;Alexei;Alexey
+Homebrew/homebrew;Alexey;Alexei
+Homebrew/homebrew;Marc;Mary
+Homebrew/homebrew;Luca;lucha
+Homebrew/homebrew;Ian;Dan
+Homebrew/homebrew;Hao Hong;Hao Song
+Homebrew/homebrew;Alex K;Alex D
+Homebrew/homebrew;Andrey;Andrew
+Homebrew/homebrew;Denis;Dennis
+saltstack/salt;Mrten;morten
+getsentry/sentry;sandy;andy
+odoo/odoo;VRA(OpenERP);VRO(OpenERP)
+odoo/odoo;rch;bch
+odoo/odoo;rch;NCH
+odoo/odoo;rch;nch
+odoo/odoo;sbh;skh
+odoo/odoo;sbh;kbh
+odoo/odoo;RCH(OpenERP);ACH(OpenERP)
+odoo/odoo;RCH(OpenERP);NCH(openerp)
+odoo/odoo;RCH(OpenERP);NCH(OpenERP)
+odoo/odoo;Sbh(Openerp);SKH(OpenERP)
+odoo/odoo;apa;gpa
+odoo/odoo;apa;ana
+odoo/odoo;apa;gpa
+odoo/odoo;ARA(OpenERP);VRA(OpenERP)
+odoo/odoo;rpa (Open ERP);RHA (Open ERP)
+odoo/odoo;rpa (Open ERP);Rga (Open ERP)
+odoo/odoo;ysa(OpenERP);YYA(OpenERP)
+odoo/odoo;JMA(OpenERP);SMA(OpenERP)
+odoo/odoo;ara;apa
+odoo/odoo;qdp;qdc
+odoo/odoo;rlu-odoo;rmu-odoo
+odoo/odoo;rch (Open ERP);NCH (Open ERP)
+odoo/odoo;SME(Tiny/Axelor);AME(Tiny/Axelor)
+odoo/odoo;SME(Tiny/Axelor);AME(tiny/Axelor)
+odoo/odoo;kmo;xmo
+odoo/odoo;kmo;kjo
+odoo/odoo;kmo;hmo
+odoo/odoo;vth;bth
+odoo/odoo;PSO(OpenERP);PSI(Openerp)
+odoo/odoo;PSO(OpenERP);PSI(OpenERP)
+odoo/odoo;KSA (Open ERP);Ysa (Open ERP)
+odoo/odoo;tiny;Tony
+odoo/odoo;RGA(openERP);RHA(OpenERP)
+odoo/odoo;RGA(openERP);rha(OpenERP)
+odoo/odoo;dhr-odoo;Dhs-odoo
+odoo/odoo;psi (Open ERP);ssi (Open ERP)
+odoo/odoo;rga;rha
+odoo/odoo;rga;rgo
+odoo/odoo;ARA (OpenERP);VRA (OpenERP)
+odoo/odoo;RVO(OpenERP);jvo(OpenERP)
+odoo/odoo;qdc;qdp
+odoo/odoo;qdc;qdp
+odoo/odoo;bde;rde
+odoo/odoo;AMP (OpenERP);atp (OpenERP)
+odoo/odoo;AMP (OpenERP);ATP (OpenERP)
+odoo/odoo;rch-openerp;NCH-OpenERP
+odoo/odoo;vra;vro
+odoo/odoo;vra;ara
+odoo/odoo;vra;vba
+odoo/odoo;GPA(OpenERP);RPA(OpenERP)
+odoo/odoo;mso;pso
+yiisoft/yii2;Alexandr;Alexander
+phacility/phabricator;Lex;Alex
+android/platform_frameworks_base;Ji-Hwan Lee;Ki-Hwan Lee
+android/platform_frameworks_base;Ki-Hwan Lee;Ji-Hwan Lee
+android/platform_frameworks_base;Yang Li;Yang Ni
+android/platform_frameworks_base;Yang Li;Ang Li
+cocos2d/cocos2d-x;Ningyu;ningxu
+cocos2d/cocos2d-x;ì„±ë‚™í˜¸;é‚µæˆ?ç£Š
+cocos2d/cocos2d-x;Bruce;xbruce
+cocos2d/cocos2d-x;é»„æ¢¦é¾™;èƒ–æ¢?
+webscalesql/webscalesql-5.6;grog@mysql.com;greg@mysql.com
+torvalds/linux;Alex Wang;Alex Yang
+torvalds/linux;Li Fei;Li Wei
+torvalds/linux;Li Fei;Li Wei
+torvalds/linux;keita kobayashi;Keika Kobayashi
+torvalds/linux;Daniel Walter;Daniel Walker
+torvalds/linux;Daniel Walter;Daniel Walker
+torvalds/linux;Fred Chou;Fred Zhou
+torvalds/linux;Thomas Maier;Thomas Mair
+torvalds/linux;Yong Zhang;Yang Zhang
+torvalds/linux;Yong Zhang;Yang Zhang
+torvalds/linux;Yong Zhang;Yang Zhang
+torvalds/linux;Maciej Grela;Maciej Trela
+torvalds/linux;Wei Song;Wei Dong
+torvalds/linux;Yong Ding;Cong Ding
+torvalds/linux;Wei Yang;Wei Yan
+torvalds/linux;Wei Yang;Wei WANG
+torvalds/linux;Wei Yang;Wei Wang
+torvalds/linux;Hui Kang;Hui Wang
+torvalds/linux;Hui Kang;Hui Wang
+torvalds/linux;Wang Long;WANG Cong
+torvalds/linux;Qiang Liu;Jiang Liu
+torvalds/linux;Chen Gang;Chen Gong
+torvalds/linux;Chen Gang;Chen Wang
+torvalds/linux;Jon Cooper;john cooper
+torvalds/linux;Yoshinori Sato;Yoshinori Sano
+torvalds/linux;Andrey Panin;Andrey Danin
+torvalds/linux;Fan Li;Yan Li
+torvalds/linux;Bo Liu;Bob Liu
+torvalds/linux;Vincent Wan;Vincent Wen
+torvalds/linux;Jerry Chuang;Jerry Huang
+torvalds/linux;Jerry Chuang;Jerry Huang
+torvalds/linux;Jerry Huang;Jerry Chuang
+torvalds/linux;Liang Zhen;Liang Chen
+torvalds/linux;Wei Hu;Wei Xu
+torvalds/linux;Mark Zhan;Mark Zhang
+torvalds/linux;Sven Andersen;Sven Anderson
+torvalds/linux;Aleksey Makarov;Aleksej Makarov
+torvalds/linux;Li Zhang;Yi Zhang
+torvalds/linux;Andy Gross;Andy Ross
+torvalds/linux;Andy Gross;Andy Ross
+torvalds/linux;Wei Dong;Wei Song
+torvalds/linux;Yang Wei;Gang Wei
+torvalds/linux;Stefan Bader;Stefan Bauer
+torvalds/linux;Tong Li;Tong Liu
+torvalds/linux;Tong Li;Long Li
+torvalds/linux;Alan;allan
+torvalds/linux;Xi Wang;Li Wang
+torvalds/linux;Xi Wang;Li Wang
+torvalds/linux;Xi Wang;Li Wang
+torvalds/linux;Zhen Wei;Zhen Lei
+torvalds/linux;Hans Zhang;Lans Zhang
+torvalds/linux;Hans Zhang;Lans Zhang
+torvalds/linux;Ting Yang;Tina Yang
+torvalds/linux;Ting Yang;Tina Yang
+torvalds/linux;Li Yang;Yi Yang
+torvalds/linux;Li Yang;Yi Yang
+torvalds/linux;Daniel Walker;Daniel Walter
+torvalds/linux;Daniel Walker;Daniel Walter
+torvalds/linux;Lin Feng;Jin Feng
+torvalds/linux;david woo;David Wood
+torvalds/linux;Dan Liang;Kan Liang
+torvalds/linux;Bian Yu;Jian Yu
+torvalds/linux;Eric Andersson;Eric Anderson
+torvalds/linux;Jessica Wu;Jessica Yu
+torvalds/linux;Hong Wu;Hong Xu
+torvalds/linux;Andrew Lynn;Andrew Lunn
+torvalds/linux;Cong Wang;Rong Wang
+torvalds/linux;Cong Wang;Yong Wang
+torvalds/linux;Cong Wang;Yong Wang
+torvalds/linux;Jiang Liu;Qiang Liu
+torvalds/linux;Jiang Liu;Jiang Lu
+torvalds/linux;Andy Ross;Andy Gross
+torvalds/linux;Yi Li;Ai Li
+torvalds/linux;Deepak S;Deepak K
+torvalds/linux;Deepak S;Deepak M
+torvalds/linux;Jonas Peterson;Jonas Petersen
+torvalds/linux;Chao Yu;Chao Fu
+torvalds/linux;Marti Raudsepp;Mart Raudsepp
+torvalds/linux;Annie Li;Annie Liu
+torvalds/linux;Tong Liu;Hong Liu
+torvalds/linux;Tong Liu;Song Liu
+torvalds/linux;Ben Gardiner;Ben Gardner
+torvalds/linux;Martin Kebert;Martin Gebert
+torvalds/linux;Yi Zhang;Yu Zhang
+torvalds/linux;Bin Wang;Lin Wang
+torvalds/linux;Bin Wang;Lin Wang
+torvalds/linux;Liang Chen;Qiang Chen
+torvalds/linux;Peter Chen;Peer Chen
+torvalds/linux;Peter Chen;Peer Chen
+torvalds/linux;Peter Chen;Peer Chen
+torvalds/linux;Tej;TJ
+torvalds/linux;Peng Tao;Zeng Tao
+torvalds/linux;Wei Yan;Wei Yuan
+torvalds/linux;Wei Yan;Wei Yang
+torvalds/linux;Sam Hansen;Sam Jansen
+torvalds/linux;Robin Gong;Robin Dong
+torvalds/linux;Robin Gong;Robin Dong
+torvalds/linux;Fan Wu;Fan Du
+torvalds/linux;Fan Wu;Fan Du
+torvalds/linux;Fan Wu;Fan Du
+torvalds/linux;Hui Wang;Rui Wang
+torvalds/linux;Hong Xu;Hong Wu
+torvalds/linux;Tony Lu;Tony Wu
+torvalds/linux;Tony Lu;Tony Li
+torvalds/linux;Jason Wang;Jason Wong
+torvalds/linux;Liu Hua;Liu Hui
+torvalds/linux;Daniel Wu;Daniel Fu
+torvalds/linux;Li Wang;Xi Wang
+torvalds/linux;Thomas Wood;Thomas Hood
+torvalds/linux;Andrew Lunn;Andrew Lynn
+torvalds/linux;Kan Liang;Dan Liang
+torvalds/linux;Aaron Wu;Aaron Lu
+torvalds/linux;Bob Liu;Bo Liu
+torvalds/linux;Dave Olson;Dave Olsen
+torvalds/linux;Jie Zhang;jia zhang
+torvalds/linux;Li Zhong;Li Hong
+torvalds/linux;Li Zhong;Li Zhang
+torvalds/linux;Aaron Lu;Aaron Wu
+torvalds/linux;Aaron Lu;Aaron Wu
+torvalds/linux;Aaron Lu;Aaron Wu
+torvalds/linux;Aaron Lu;Aaron Wu
+torvalds/linux;Michael;Michiel
+torvalds/linux;Wang Chen;Tang Chen
+torvalds/linux;Zeng Tao;Peng Tao
+torvalds/linux;Adam Thompson;Adam Thomson
+torvalds/linux;Jonghwa Lee;Donghwa Lee
+torvalds/linux;Ming Jiang;Ning Jiang
+torvalds/linux;Ming Jiang;Ning Jiang
+torvalds/linux;Andy Yan;Andy Ryan
+torvalds/linux;WANG Cong;Wang Long

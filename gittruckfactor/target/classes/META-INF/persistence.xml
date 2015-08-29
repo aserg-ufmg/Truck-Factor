@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  
+  <persistence-unit name="main" transaction-type="RESOURCE_LOCAL">
+  
+  	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!--    <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+    <class>aserg.gtf.model.ProjectInfo</class>
+    <class>aserg.gtf.model.LanguageInfo</class>
+    <class>aserg.gtf.model.NewFileInfo</class>
+    <class>aserg.gtf.model.LogCommitInfo</class>
+    <class>aserg.gtf.model.LogCommitFileInfo</class>
+    <class>aserg.gtf.model.authorship.Repository</class>
+    <class>aserg.gtf.model.authorship.Developer</class>
+    <class>aserg.gtf.model.authorship.File</class>
+    <class>aserg.gtf.model.authorship.AuthorshipInfo</class>
+    <class>aserg.gtf.model.authorship.DeveloperAuthorshipInfo</class>
+    
+<!--     <class>gaa.model.GitRepository</class> -->
+
+    <properties>
+		
+
+		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+		
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gittruckfactor" />
+		<property name="javax.persistence.jdbc.user" value="gittruckfactor" />
+		<property name="javax.persistence.jdbc.password" value="gittruckfactor"/>
+		
+		<property name="eclipselink.logging.level" value="INFO"/>
+		
+<!-- 		<property name="eclipselink.ddl-generation.output-mode" value="database" /> -->
+		<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+<!-- 		<property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> -->
+<!-- 		<property name="eclipselink.ddl-generation" value="create-tables" /> -->
+<!-- 		<property name="eclipselink.ddl-generation" value="none" /> -->
+    </properties>
+
+  </persistence-unit>
+</persistence> 
