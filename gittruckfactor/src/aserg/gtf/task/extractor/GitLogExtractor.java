@@ -12,15 +12,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import aserg.gtf.dao.LogCommitDAO;
 import aserg.gtf.dao.ProjectInfoDAO;
 import aserg.gtf.model.LogCommitFileInfo;
 import aserg.gtf.model.LogCommitInfo;
 import aserg.gtf.model.ProjectInfo;
 import aserg.gtf.task.AbstractTask;
+import aserg.gtf.task.DOACalculator;
 import aserg.gtf.util.CRLFLineReader;
 
 public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
+	private static final Logger LOGGER = Logger.getLogger(GitLogExtractor.class);
 	
 	public GitLogExtractor(String repositoryPath, String repositoryName) {
 		super("commitinfo.log", repositoryPath, repositoryName);
@@ -28,28 +32,13 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 
 
 	static String path = "";
-	
-//	public static void main(String[] args) throws IOException {
-//		String repName = "";
-//		if (args.length>0)
-//			path = args[0];
-//		if (args.length>1)
-//			repName = args[1];
-//		
-//		path = (path.charAt(path.length()-1) == '/') ? path : (path + "/");
-//		GitLogExtractor gitLoggerExtractor = new GitLogExtractor(path, repName);
-//		
-//		System.out.println("BEGIN at "+ new Date() + "\n\n");
-//		gitLoggerExtractor.simpleExtract();
-//		System.out.println("\n\nEND at "+ new Date());
-//	}
-	
+
 
 	public Map<String, LogCommitInfo> execute() throws IOException{
 		Map<String, LogCommitInfo> mapCommits = new HashMap<String, LogCommitInfo>();
 		int countcfs = 0;
-		try{			
-			System.out.println(": Extracting logCommits...  "+repositoryPath);
+		try{	
+			LOGGER.info("Extracting logCommits...  "+repositoryPath);
 			BufferedReader br = new BufferedReader(new FileReader(
 					repositoryPath + fileName));
 			String sCurrentLine;
@@ -57,7 +46,7 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 			while ((sCurrentLine = br.readLine()) != null) {
 				values = sCurrentLine.split(";");
 				if (values.length<7)
-					System.err.println("Erro na linha " + countcfs);
+					LOGGER.error("Problem in line  " + countcfs + ". Too much columns.");
 				Date authorDate = !values[3].isEmpty() ? new Timestamp(Long.parseLong(values[3]) * 1000L) : null;
 				Date commiterDate = !values[6].isEmpty() ? new Timestamp(Long.parseLong(values[6]) * 1000L) : null;
 				String msg = (values.length == 8) ? values[7] : "";
@@ -74,7 +63,8 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 			
 		}
 		catch(Exception e ){
-			System.err.format("Error in file %s, line %d\n%s", repositoryName, countcfs, e.getMessage() );
+			String strError = String.format("Error in file %s, line %d%", repositoryName, countcfs);
+			LOGGER.error(strError, e);
 		}
 				
 		return mapCommits;
@@ -88,7 +78,7 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 			lcDAO.persistAll(map.values());
 		}
 		catch(Exception e){
-			System.err.println("Error in fileInfo extraction \n"+e.toString());
+			LOGGER.error("Error in fileInfo extraction", e);
 		} 
 		finally{
 			lcDAO.clear();
@@ -97,34 +87,8 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 	}
 	
 	
-//	static public Map<String, List<LogCommitFileInfo>> extractProject(String localPath, String projectName) throws IOException{
-//		Map<String, List<LogCommitFileInfo>> map = new HashMap<String, List<LogCommitFileInfo>>();
-//		List<LogCommitFileInfo> logCommitFiles;
-//		int countcfs = 0;
-//		System.out.println(projectName+": Extracting logCommitFiles...");
-//		String fileName = projectName.replace('/', '-')+".txt";
-//		BufferedReader br = new BufferedReader(new FileReader(localPath+fileName));
-//		String sCurrentLine;
-//		String[] values;
-//
-//		while ((sCurrentLine = br.readLine()) != null) {
-//			values = sCurrentLine.split(";");
-//			String sha = values[0];
-//			if (map.containsKey(sha))
-//				logCommitFiles = map.get(sha);
-//			else{
-//				logCommitFiles = new ArrayList<LogCommitFileInfo>();
-//				map.put(sha, logCommitFiles);
-//			}
-//			logCommitFiles.add(new LogCommitFileInfo(values[1], values[2], values[3]));
-//		}
-//		br.close();
-//		return map;
-//	}
-	
 	private void insertFiles(String projectName, Map<String, LogCommitInfo> mapCommit) throws IOException{
-		System.out.println(projectName+": Extracting logCommitFiles...");
-		String fileName = projectName.replace('/', '-')+".txt";
+		LOGGER.info(projectName+": Extracting logCommitFiles...");
 		BufferedReader br = new BufferedReader(new FileReader(repositoryPath+"commitfileinfo.log"));
 		String sCurrentLine;
 		String[] values;

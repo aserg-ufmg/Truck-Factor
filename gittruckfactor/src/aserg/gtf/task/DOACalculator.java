@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
+import aserg.gtf.GitTruckFactor;
 import aserg.gtf.dao.LogCommitFileDAO;
 import aserg.gtf.dao.NewFileInfoDAO;
 import aserg.gtf.dao.ProjectInfoDAO;
@@ -28,6 +31,7 @@ import aserg.gtf.model.authorship.Repository;
 import aserg.gtf.model.authorship.RepositoryStatus;
 
 public class DOACalculator extends AbstractTask<Repository>{
+	private static final Logger LOGGER = Logger.getLogger(DOACalculator.class);
 	private Collection<LogCommitInfo> commits;
 	private List<NewFileInfo> files;
 
@@ -42,12 +46,10 @@ public class DOACalculator extends AbstractTask<Repository>{
 
 	@Override
 	public Repository execute() throws IOException {
-		System.out.format("%s (%s): Extracting and calculating authorship information...\n",
-				repositoryName, new Date());
+		LOGGER.info(repositoryName + ": Extracting and calculating authorship information...");
 		Repository repository = new Repository(repositoryName);
 		repository.setFiles(getFiles(repository, commits, files));
-		System.out.format("%s (%s): Authorship information calculated\n",
-				repositoryName, new Date());
+		LOGGER.info(repositoryName + ": Authorship information calculated");
 		return repository;
 	}
 
@@ -59,7 +61,7 @@ public class DOACalculator extends AbstractTask<Repository>{
 			reDAO.persist(repository);
 		}
 		catch(Exception e){
-			System.err.println("Erro ao persistir projeto " + repository.getFullName() + "\n"+e.toString());
+			LOGGER.error("Persist error in repository " + repository.getFullName(), e);
 		} 
 		finally{
 			reDAO.clear();
@@ -107,7 +109,7 @@ public class DOACalculator extends AbstractTask<Repository>{
 		List<LogCommitFileInfo> fileCommits = mapFiles.get(fileInfo.getPath());
 		// Rarely, but some files do not have any commit. Should be verified each case to understand the impact. Normally is irrelevant. 
 		if (fileCommits == null){
-			System.err.println("Atention: No commits for " + file);
+			LOGGER.warn("No commits for " + file);
 			return;
 		}
 			
@@ -125,7 +127,8 @@ public class DOACalculator extends AbstractTask<Repository>{
 					authorshipInfo.setAsFirstAuthor();
 				}
 				else if (!authorshipInfo.isFirstAuthor()){ //New ADD made by a different developer of the first add
-					//System.err.format("New add;%s;%s;%s;%s\n", repository.getFullName(), file.getPath(), firstAuthor, authorshipInfo.getDeveloper().getUserName());
+					String debugStr = String.format("New add;%s;%s;%s;%s", repository.getFullName(), file.getPath(), firstAuthor, authorshipInfo.getDeveloper().getNewUserName());
+					LOGGER.debug(debugStr);
 					authorshipInfo.setAsSecondaryAuthor();
 					authorshipInfo.addNewAddDelivery();
 				}

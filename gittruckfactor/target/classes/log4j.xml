@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
-<log4j:configuration debug="true"
+<log4j:configuration debug="false"
 	xmlns:log4j='http://jakarta.apache.org/log4j/'>
  
-	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+	<appender name="console-info" class="org.apache.log4j.ConsoleAppender">
 	    <layout class="org.apache.log4j.PatternLayout">
-		<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n" />
-		<!--
-		<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
-		-->
+		<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n" />		
 	    </layout>
+         
+                <filter class="org.apache.log4j.varia.LevelMatchFilter">
+                        <param name="LevelToMatch" value="info"/>
+                        <param name="AcceptOnMatch" value="true"/>
+                </filter>
+                <filter class="org.apache.log4j.varia.DenyAllFilter" />
+	</appender>
+	<appender name="console-warn" class="org.apache.log4j.ConsoleAppender">
+	    <layout class="org.apache.log4j.PatternLayout">		
+		<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />		
+	    </layout>
+        
+        <filter class="org.apache.log4j.varia.LevelRangeFilter"> 
+                        <param name="LevelMax" value="fatal"/>     
+                        <param name="LevelMin" value="warn"/>
+                <param name="AcceptOnMatch" value="true"/>
+        </filter>
+        <filter class="org.apache.log4j.varia.DenyAllFilter" />
+	</appender>
+	<appender name="console-debug" class="org.apache.log4j.ConsoleAppender">
+	    <layout class="org.apache.log4j.PatternLayout">		
+		<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />		
+	    </layout>        
+        <filter class="org.apache.log4j.varia.LevelRangeFilter"> 
+                        <param name="LevelMax" value="debug"/>     
+                        <param name="LevelMin" value="all"/>
+                <param name="AcceptOnMatch" value="true"/>
+        </filter>
+        <filter class="org.apache.log4j.varia.DenyAllFilter" />
 	</appender>
  
 	<root>
-		<level value="INFO" />
-		<appender-ref ref="console" />
+		<level value="info" />
+		<appender-ref ref="console-info"/>
+		<appender-ref ref="console-warn"/>
+		<appender-ref ref="console-debug"/>
 	</root>
  
 </log4j:configuration>

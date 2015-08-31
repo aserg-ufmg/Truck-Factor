@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import aserg.gtf.model.LogCommitInfo;
 import aserg.gtf.model.NewFileInfo;
 import aserg.gtf.model.authorship.AuthorshipInfo;
@@ -32,15 +34,15 @@ import aserg.gtf.util.FileInfoReader;
 import aserg.gtf.util.LineInfo;
 
 public class GitTruckFactor {
-
+	private static final Logger LOGGER = Logger.getLogger(GitTruckFactor.class);
 	public static void main(String[] args) throws IOException {
+		LOGGER.trace("GitTruckFactor starts");
 		String repositoryPath = "";
 		String repositoryName = "";
 		if (args.length>0)
 			repositoryPath = args[0];
 		if (args.length>1)
 			repositoryName = args[1];
-		
 		
 		repositoryPath = (repositoryPath.charAt(repositoryPath.length()-1) == '/') ? repositoryPath : (repositoryPath + "/");
 		if (repositoryName.isEmpty())
@@ -57,7 +59,6 @@ public class GitTruckFactor {
 		LinguistExtractor linguistExtractor =  new LinguistExtractor(repositoryPath, repositoryName);
 		
 		
-		System.out.println("BEGIN at "+ new Date() + "\n\n");
 		
 		//gitLogExtractor.persist(commits);
 		
@@ -68,7 +69,7 @@ public class GitTruckFactor {
 
 		
 		
-		System.out.println("\n\nEND at "+ new Date());
+		LOGGER.trace("GitTruckFactor end");
 	}
 
 	private static void printCoverageInTime(String repositoryPath,
@@ -150,7 +151,7 @@ public class GitTruckFactor {
 			else if (!file.getFiltered())
 				count++;
 		}
-		System.out.println("Files without "+module + ": "+count);
+		LOGGER.info("Files without "+module + ": "+count);
 	}
 	private static void filterByModule(List<NewFileInfo> files, String module) {
 		int count = 0;
@@ -162,7 +163,7 @@ public class GitTruckFactor {
 			else if (!file.getFiltered())
 				count++;
 		}
-		System.out.println(module + " - files: " +count);
+		LOGGER.info(module + " - files: " +count);
 	}
 
 	private static void setModules(List<LineInfo> modulesInfo,
@@ -175,7 +176,7 @@ public class GitTruckFactor {
 			if (moduleMap.containsKey(newFileInfo.getPath()))
 				newFileInfo.setModule(moduleMap.get(newFileInfo.getPath()));
 			else
-				System.out.println("Alert: module not found for file "+newFileInfo.getPath());
+				LOGGER.warn("Alert: module not found for file "+newFileInfo.getPath());
 		}
 		
 	}
@@ -236,7 +237,7 @@ public class GitTruckFactor {
 				}			
 			}
 		}
-		System.out.println("REGEX FILTER = " + count);
+		LOGGER.info("REGEX FILTER = " + count);
 	}
 	
 	private static void applyRegexSelect(List<NewFileInfo> files, String exp) {
@@ -250,7 +251,7 @@ public class GitTruckFactor {
 				}			
 			}
 		}
-		System.out.println("REGEX FILTER = " + count);
+		LOGGER.info("REGEX FILTER = " + count);
 	}
 
 	private static void applyFilterFiles(List<LineInfo> filteredFilesInfo, List<NewFileInfo> files) {
@@ -261,7 +262,6 @@ public class GitTruckFactor {
 					if (newFileInfo.getPath().equals(path)){
 						newFileInfo.setFiltered(true);
 						newFileInfo.setFilterInfo(lineInfo.getValues().get(1));
-						//System.out.println(path);
 					}
 					
 				}
