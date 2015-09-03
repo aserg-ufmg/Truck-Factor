@@ -16,7 +16,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="libs/substance.jar"/>
-	<classpathentry kind="lib" path="libs/topicviewer.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
