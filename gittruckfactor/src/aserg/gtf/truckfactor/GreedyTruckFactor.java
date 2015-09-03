@@ -29,13 +29,6 @@ public class GreedyTruckFactor extends TruckFactor {
 		Map<Integer, Float> trucKFactorMap = new HashMap<Integer, Float>();
 		Set<File> repFiles =  new HashSet<File>(repository.getFiles());
 		Map<Developer, Set<File>> authorsMap = getFilesAuthorMap(repository);
-//		for (Entry<Developer, Set<File>> entry : authorsMap.entrySet()) {
-//			System.out.print(entry.getKey().getName() + ": ");
-//			for (File file : entry.getValue()) {
-//				System.out.print(file.getPath() + " ");
-//			}
-//			System.out.println();
-//		}
 		int factor = 0;
 		Set<File> clonedRepFiles = new  HashSet<File>(repFiles);
 		while(authorsMap.size()>0){
@@ -69,8 +62,6 @@ public class GreedyTruckFactor extends TruckFactor {
 	}
 
 	private float getCoverage(Set<File> repFiles, Map<Developer, Set<File>> authorsMap) {
-//		Map<Long, Set<Long>> clonedAuthorsMap = new HashMap<Long, Set<Long>>(authorsMap);
-//		Set<Long> clonedRepFiles = new  HashSet<Long>(repFiles);
 		Set<File> authorsSet = new HashSet<File>();
 		for (Entry<Developer, Set<File>> entry : authorsMap.entrySet()) {
 			for (File file : entry.getValue()) {
@@ -91,7 +82,7 @@ public class GreedyTruckFactor extends TruckFactor {
 				biggerDev = entry.getKey();
 			}
 		}
-		tfAuthorInfo.add(biggerDev.getName() +";"+ biggerNumber + ";"+  ((float)biggerNumber)/repFiles.size());
+		tfAuthorInfo.add(String.format("%s;%d;%.2f", biggerDev.getName(), biggerNumber, ((float)biggerNumber)/repFiles.size()*100));
 //		System.out.format("removed: %s:%s - %d (%.2f)\n" , biggerDev.getName(), biggerDev.getNewUserName(), biggerNumber, ((float)biggerNumber)/repFiles.size());
 		//printAuthorsFile(authorsMap.get(biggerDev));
 		authorsMap.remove(biggerDev);
@@ -161,7 +152,8 @@ public class GreedyTruckFactor extends TruckFactor {
 		}
 	}
 	private void printTF(String repName, Map<Integer, Float> truckMap) {
-		System.out.format("TF = %d\nTF authors (Developer;Files;Percentage):\n", truckMap.size()-1);
+		float coverage = truckMap.size() == 1 ? 0f : truckMap.get(tfAuthorInfo.size())*100;
+		System.out.format("TF = %d (coverage = %.2f%%)\nTF authors (Developer;Files;Percentage):\n", tfAuthorInfo.size(), coverage);
 		for (String tfInfo : tfAuthorInfo) {
 			System.out.println(tfInfo);
 		}

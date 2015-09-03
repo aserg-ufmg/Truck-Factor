@@ -1,6 +1,7 @@
 package aserg.gtf.task.extractor;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -61,6 +62,9 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 			insertFiles(repositoryName, mapCommits);
 			br.close();
 			
+		}
+		catch(FileNotFoundException e ){
+			LOGGER.error("File not found: " + repositoryPath + fileName, e);
 		}
 		catch(Exception e ){
 			String strError = String.format("Error in file %s, line %d%", repositoryName, countcfs);

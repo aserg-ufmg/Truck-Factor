@@ -194,7 +194,7 @@ public class GitTruckFactor {
 			}
 		}
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println("Coverage;"+ format.format(cal.getTime()) +";"+ devsFiles.size() +";"+ nFiles +";"+ (float)devsFiles.size()/nFiles);
+		System.out.println("Coverage;"+ format.format(cal.getTime()) +";"+ devsFiles.size() +";"+ nFiles +";"+ (float)devsFiles.size()/nFiles*100);
 	}
 
 	private static int getTotalFiles(List<Developer> developers) {

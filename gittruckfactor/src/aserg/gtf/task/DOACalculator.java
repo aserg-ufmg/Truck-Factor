@@ -196,7 +196,7 @@ public class DOACalculator extends AbstractTask<Repository>{
 					List<LogCommitFileInfo> newList = mapFiles.get(commitFile.getOldFileName());
 					// Some renamed files do not have any commit, even in GitHub.
 					if (newList==null) {
-						System.err.println("\n\nERROR in RENAME: No commits for " + commitFile.getOldFileName()+"\n\n");
+						LOGGER.warn("ERROR in RENAME: No commits for old filename: " + commitFile.getOldFileName());
 					}
 					else{
 						for (LogCommitFileInfo newCommitFile : newList) {
