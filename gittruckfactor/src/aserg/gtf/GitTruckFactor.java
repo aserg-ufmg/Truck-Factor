@@ -35,7 +35,7 @@ import aserg.gtf.util.LineInfo;
 
 public class GitTruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(GitTruckFactor.class);
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		LOGGER.trace("GitTruckFactor starts");
 		String repositoryPath = "";
 		String repositoryName = "";
@@ -49,12 +49,31 @@ public class GitTruckFactor {
 			repositoryName = repositoryPath.split("/")[repositoryPath.split("/").length-1];
 		
 
-		Map<String, List<LineInfo>> filesInfo = FileInfoReader.getFileInfo("filtered-files.txt");
-		Map<String, List<LineInfo>> aliasInfo = FileInfoReader.getFileInfo("alias.txt");
-		Map<String, List<LineInfo>> modulesInfo = FileInfoReader.getFileInfo("modules.txt");
+		Map<String, List<LineInfo>> filesInfo;
+		Map<String, List<LineInfo>> aliasInfo;
+		Map<String, List<LineInfo>> modulesInfo;
+		try {
+			filesInfo = FileInfoReader.getFileInfo("repo_info/filtered-files.txt");
+		} catch (IOException e) {
+			LOGGER.warn("Not possible to read repo_info/filtered-files.txt file. File filter step will not be executed!");
+			filesInfo = null;
+		}		
+		try {
+			aliasInfo = FileInfoReader.getFileInfo("repo_info/alias.txt");
+		} catch (IOException e) {
+			LOGGER.warn("Not possible to read repo_info/alias.txt file. Aliases treating step will not be executed!");
+			aliasInfo = null;
+		}
+		try {
+			modulesInfo = FileInfoReader.getFileInfo("repo_info/modules.txt");
+		} catch (IOException e) {
+			LOGGER.warn("Not possible to read repo_info/modules.txt file. No modules info will be setted!");
+			modulesInfo = null;
+		}
+		
 		
 		GitLogExtractor gitLogExtractor = new GitLogExtractor(repositoryPath, repositoryName);	
-		NewAliasHandler aliasHandler = new NewAliasHandler(aliasInfo.get(repositoryName));
+		NewAliasHandler aliasHandler =  aliasInfo == null ? null : new NewAliasHandler(aliasInfo.get(repositoryName));
 		FileInfoExtractor fileExtractor = new FileInfoExtractor(repositoryPath, repositoryName);
 		LinguistExtractor linguistExtractor =  new LinguistExtractor(repositoryPath, repositoryName);
 		
@@ -64,7 +83,11 @@ public class GitTruckFactor {
 		
 		//printCoverageInTime(repositoryPath, repositoryName, filesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
 		
-		calculateTF(repositoryPath, repositoryName, filesInfo, modulesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
+		try {
+			calculateTF(repositoryPath, repositoryName, filesInfo, modulesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
+		} catch (Exception e) {
+			LOGGER.error("TF calculation aborted!",e);
+		}
 		
 
 		
@@ -72,11 +95,12 @@ public class GitTruckFactor {
 		LOGGER.trace("GitTruckFactor end");
 	}
 
+	//Test to calculate the authorship variation on time 
 	private static void printCoverageInTime(String repositoryPath,
 			String repositoryName, Map<String, List<LineInfo>> filesInfo,
 			FileInfoExtractor fileExtractor,
 			LinguistExtractor linguistExtractor,
-			GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws IOException {
+			GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws Exception {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.YEAR, 2015);
@@ -95,7 +119,8 @@ public class GitTruckFactor {
  			
  			List<NewFileInfo> files = fileExtractor.execute();
  			files = linguistExtractor.setNotLinguist(files);
- 			applyFilterFiles(filesInfo.get(repositoryName), files);
+ 			if (filesInfo != null)
+ 				applyFilterFiles(filesInfo.get(repositoryName), files);
  			
  			Map<String, LogCommitInfo> newCommits = filterCommitsByDate(commits, cal.getTime());
 			DOACalculator doaCalculator = new DOACalculator(repositoryPath,	repositoryName, newCommits.values(), files);
@@ -112,16 +137,18 @@ public class GitTruckFactor {
 			Map<String, List<LineInfo>> modulesInfo,
 			FileInfoExtractor fileExtractor,
 			LinguistExtractor linguistExtractor,
-			GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws IOException {
+			GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws Exception {
 		
 			Map<String, LogCommitInfo> commits = gitLogExtractor.execute();
- 			commits = aliasHandler.execute(repositoryName, commits);
+ 			if (aliasHandler != null)
+ 					commits = aliasHandler.execute(repositoryName, commits);
  			 				
 			List<NewFileInfo> files = fileExtractor.execute();
-			files = linguistExtractor.setNotLinguist(files);		
-			applyFilterFiles(filesInfo.get(repositoryName), files);
+			files = linguistExtractor.setNotLinguist(files);	
+			if(filesInfo != null) 
+				applyFilterFiles(filesInfo.get(repositoryName), files);
 			
-			if(modulesInfo.containsKey(repositoryName))
+			if(modulesInfo != null && modulesInfo.containsKey(repositoryName))
 				setModules(modulesInfo.get(repositoryName), files);
 			
 			//filterByModule(files, "net");

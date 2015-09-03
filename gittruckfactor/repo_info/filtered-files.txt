@@ -1,3 +1,4 @@
+####### List of files to be discard #######
 #fullname;path;filterinfo
 ajaxorg/ace;demo/kitchen-sink/docs/diff.diff;#Remove(all): %/docs/%#
 ajaxorg/ace;demo/kitchen-sink/docs/io.io;#Remove(all): %/docs/%#

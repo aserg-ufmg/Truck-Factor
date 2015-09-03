@@ -35,7 +35,7 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 	static String path = "";
 
 
-	public Map<String, LogCommitInfo> execute() throws IOException{
+	public Map<String, LogCommitInfo> execute() throws Exception{
 		Map<String, LogCommitInfo> mapCommits = new HashMap<String, LogCommitInfo>();
 		int countcfs = 0;
 		try{	
@@ -64,11 +64,10 @@ public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 			
 		}
 		catch(FileNotFoundException e ){
-			LOGGER.error("File not found: " + repositoryPath + fileName, e);
+			throw new Exception("File not found: " + repositoryPath + fileName, e);
 		}
 		catch(Exception e ){
-			String strError = String.format("Error in file %s, line %d%", repositoryName, countcfs);
-			LOGGER.error(strError, e);
+			throw new Exception(String.format("Error in file %s, line %d%", repositoryName, countcfs));
 		}
 				
 		return mapCommits;

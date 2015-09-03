@@ -23,6 +23,6 @@ public abstract class AbstractTask <T>{
 		this.repositoryName = repositoryName;
 	}
 	
-	public abstract T execute() throws IOException;
+	public abstract T execute() throws Exception;
 	public abstract void persist(T objects) throws IOException;
 }

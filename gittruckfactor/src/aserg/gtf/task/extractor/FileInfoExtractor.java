@@ -20,7 +20,7 @@ public class FileInfoExtractor extends AbstractTask<List<NewFileInfo>>{
 		super("filelist.log", repositoryPath, repositoryName);
 	}
 	
-	public List<NewFileInfo> execute() throws IOException{
+	public List<NewFileInfo> execute() throws Exception{
 		List<NewFileInfo> files = new ArrayList<NewFileInfo>();
 		try {
 			LOGGER.info(repositoryName + ": Extracting file information...");
@@ -32,7 +32,7 @@ public class FileInfoExtractor extends AbstractTask<List<NewFileInfo>>{
 			}
 			br.close();
 		} catch (Exception e) {
-			LOGGER.error("Error in project "+repositoryName,e);
+			throw new Exception("Error in project "+repositoryName,e);
 		}
 		return files;		
 	}

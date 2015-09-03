@@ -13,18 +13,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import aserg.gtf.dao.NewFileInfoDAO;
 import aserg.gtf.model.NewFileInfo;
 import aserg.gtf.task.AbstractTask;
 
 public class LinguistExtractor extends AbstractTask<List<NewFileInfo>>{
+	private static final Logger LOGGER = Logger.getLogger(LinguistExtractor.class);
 	
 	public LinguistExtractor(String repositoryPath, String repositoryName) {
 		super("linguistfiles.log", repositoryPath, repositoryName);
 	}
 	
 	
-	public List<NewFileInfo> execute() throws IOException{
+	public List<NewFileInfo> execute() {
 		List<NewFileInfo> linguistFiles = new ArrayList<NewFileInfo>();
 		try {
 			Map<String, List<String>> languageMap = new HashMap<String, List<String>>();
@@ -43,29 +46,34 @@ public class LinguistExtractor extends AbstractTask<List<NewFileInfo>>{
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			System.err.println("\n"+fileName + " not found. Executing without Linguist filter.");
+			LOGGER.warn(fileName + " not found. Executing without Linguist filter.");
+			linguistFiles = null;
 		}
 		catch (Exception e) {
-			System.err.println("Erro no projeto "+repositoryName);
-			System.err.println(e.getMessage());
+			LOGGER.error("Erro no projeto "+repositoryName,e);
+			linguistFiles = null;
 		}
 	
 		return linguistFiles;
 	}
 	
 	public List<NewFileInfo> setNotLinguist(List<NewFileInfo> files) throws IOException{
+
 		Map<String, NewFileInfo> linguistFilesMap = new HashMap<String, NewFileInfo>();
-		for (NewFileInfo linguistFile : execute()) {
-			linguistFilesMap.put(linguistFile.getPath(), linguistFile);
-		}
-		for (NewFileInfo file : files) {
-			if (linguistFilesMap.containsKey(file.getPath())){
-				file.setLanguage(linguistFilesMap.get(file.getPath()).getLanguage());
+		List<NewFileInfo> linguistFiles = execute();
+		if (linguistFiles != null) {
+			for (NewFileInfo linguistFile : linguistFiles) {
+				linguistFilesMap.put(linguistFile.getPath(), linguistFile);
 			}
-			else{
-				file.setFiltered(true);
-				file.setFilterInfo("NOTIDENTIFIED");
-			}				
+			for (NewFileInfo file : files) {
+				if (linguistFilesMap.containsKey(file.getPath())) {
+					file.setLanguage(linguistFilesMap.get(file.getPath())
+							.getLanguage());
+				} else {
+					file.setFiltered(true);
+					file.setFilterInfo("NOTLINGUIST");
+				}
+			}
 		}
 		return files;
 	}

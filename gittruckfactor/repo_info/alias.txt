@@ -1,3 +1,4 @@
+####### List of user name aliases #######
 #REPOSITORY;NAME;ALIAS
 mrdoob/three.js;Sébastien Valette;Sebastien Valette
 mrdoob/three.js;Dustbin;dustbin
@@ -57,7 +58,7 @@ Homebrew/homebrew;Brian Smyth;Brian Smith
 Homebrew/homebrew;sergey;Sergey
 Homebrew/homebrew;ELLIOTTCABLE;elliottcable
 Homebrew/homebrew;iandol;Iandol
-#Homebrew/homebrew;�?涛;�?痴
+#Homebrew/homebrew;�?涛;�?痴
 Homebrew/homebrew;Tim Taylor;Tom Taylor
 Homebrew/homebrew;Tim Taylor;Tom Taylor
 Homebrew/homebrew;Barberio;barberio
@@ -321,7 +322,7 @@ torvalds/linux;stephen hemminger;Stephen Hemminger
 torvalds/linux;stephen hemminger;Stephen Hemminger
 torvalds/linux;stephen hemminger;Stephen Hemminger
 torvalds/linux;hao liu;Hao Liu
-torvalds/linux;J�rg Schummer;Jorg Schummer
+torvalds/linux;J�rg Schummer;Jorg Schummer
 torvalds/linux;françois romieu;Francois Romieu
 torvalds/linux;françois romieu;François Romieu
 torvalds/linux;Noone Important;NooneImportant
@@ -369,7 +370,7 @@ torvalds/linux;Edgar E. Iglesias;Edgar E Iglesias
 torvalds/linux;Gabriel Fernandez;Gabriel FERNANDEZ
 torvalds/linux;Gaëtan Carlier;Gaetan Carlier
 torvalds/linux;Wu Fei;Wufei
-torvalds/linux;Rémi Denis-Courmont;R�mi Denis-Courmont
+torvalds/linux;Rémi Denis-Courmont;R�mi Denis-Courmont
 torvalds/linux;Yang, Sheng;Yang Sheng
 torvalds/linux;Denys Vlasenko;Denis Vlasenko
 torvalds/linux;Shahar Levi;Shahar Lev
@@ -460,7 +461,7 @@ torvalds/linux;suzuki;Suzuki
 torvalds/linux;David Härdeman;David Hardeman
 torvalds/linux;Jean-Francois Dagenais;Jean-François Dagenais
 torvalds/linux;Timo Teras;Timo Teräs
-torvalds/linux;Timo Teras;Timo Ter�s
+torvalds/linux;Timo Teras;Timo Ter�s
 torvalds/linux;baker.zhang;Baker Zhang
 torvalds/linux;bgardner@wabtec.com;BGardner@Wabtec.com
 torvalds/linux;Jassi Brar;jassi brar
