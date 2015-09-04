@@ -75,7 +75,7 @@ public class DOACalculator extends AbstractTask<Repository>{
 	
 
 	private static List<File> getFiles(Repository repository, Collection<LogCommitInfo> commitFiles, List<NewFileInfo> filesInfo) {
-		List<File> tempfiles = new ArrayList<>();		
+		List<File> tempfiles = new ArrayList<File>();		
 		Map<String,List<LogCommitFileInfo>> mapFiles = getCommitFilesMap(commitFiles);
 		for (NewFileInfo fileInfo : filesInfo) {
 			if (!fileInfo.getFiltered()){

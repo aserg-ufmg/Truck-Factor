@@ -50,7 +50,7 @@ public class LogCommitDAO extends GenericDAO<LogCommitInfo>{
 			try {
 				if (thread.isAlive())
 					thread.join();
-				thread = new PersistThread<>(logCommits, this);
+				thread = new PersistThread<LogCommitInfo>(logCommits, this);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

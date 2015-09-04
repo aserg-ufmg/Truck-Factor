@@ -47,7 +47,7 @@ public class LogCommitFileDAO extends GenericDAO<LogCommitFileInfo>{
 			try {
 				if (thread.isAlive())
 					thread.join();
-				thread = new PersistThread<>(logCFiles, this);
+				thread = new PersistThread<LogCommitFileInfo>(logCFiles, this);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
