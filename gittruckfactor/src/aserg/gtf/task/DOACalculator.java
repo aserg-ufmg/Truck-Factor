@@ -49,7 +49,6 @@ public class DOACalculator extends AbstractTask<Repository>{
 		LOGGER.info(repositoryName + ": Extracting and calculating authorship information...");
 		Repository repository = new Repository(repositoryName);
 		repository.setFiles(getFiles(repository, commits, files));
-		LOGGER.info(repositoryName + ": Authorship information calculated");
 		return repository;
 	}
 
