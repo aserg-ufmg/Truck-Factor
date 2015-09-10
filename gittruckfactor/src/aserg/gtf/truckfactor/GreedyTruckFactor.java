@@ -19,8 +19,10 @@ import aserg.gtf.model.authorship.Repository;
 import aserg.gtf.task.DOACalculator;
 
 import com.google.common.collect.Sets;
+import org.apache.log4j.Logger;
 
 public class GreedyTruckFactor extends TruckFactor {
+	private static final Logger LOGGER = Logger.getLogger(TruckFactor.class);
 
 	private List<String> tfAuthorInfo = new ArrayList<String>();
 	
@@ -152,11 +154,15 @@ public class GreedyTruckFactor extends TruckFactor {
 		}
 	}
 	private void printTF(String repName, Map<Integer, Float> truckMap) {
-		float coverage = truckMap.size() == 1 ? 0f : truckMap.get(tfAuthorInfo.size())*100;
-		System.out.format("TF = %d (coverage = %.2f%%)\nTF authors (Developer;Files;Percentage):\n", tfAuthorInfo.size(), coverage);
-		for (String tfInfo : tfAuthorInfo) {
-			System.out.println(tfInfo);
+		if (truckMap != null){
+			float coverage = truckMap.size() == 1 ? 0f : truckMap.get(tfAuthorInfo.size())*100;
+			System.out.format("TF = %d (coverage = %.2f%%)\nTF authors (Developer;Files;Percentage):\n", tfAuthorInfo.size(), coverage);
+			for (String tfInfo : tfAuthorInfo) {
+				System.out.println(tfInfo);
+			}
 		}
+		else
+			LOGGER.warn("No authorship information enough to calculate the TF. Verify the number of files and commit available after filter steps");
 	}
 
 }

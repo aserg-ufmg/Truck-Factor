@@ -4,26 +4,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import aserg.gtf.GitTruckFactor;
-import aserg.gtf.dao.LogCommitFileDAO;
-import aserg.gtf.dao.NewFileInfoDAO;
-import aserg.gtf.dao.ProjectInfoDAO;
-import aserg.gtf.dao.authorship.AuthorshipInfoDAO;
 import aserg.gtf.dao.authorship.RepositoryDAO;
 import aserg.gtf.model.LogCommitFileInfo;
 import aserg.gtf.model.LogCommitInfo;
 import aserg.gtf.model.NewFileInfo;
-import aserg.gtf.model.ProjectInfo;
 import aserg.gtf.model.Status;
 import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.File;

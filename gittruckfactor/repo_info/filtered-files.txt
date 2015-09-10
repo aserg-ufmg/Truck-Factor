@@ -1,2 +1,2 @@
 ####### List of files to be discard #######
-#repository;file_path;filterinfo
+#git_repository_name;file_path;filter_info
