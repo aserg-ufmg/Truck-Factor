@@ -54,6 +54,9 @@ public class GitTruckFactor {
 		Map<String, List<LineInfo>> modulesInfo;
 		try {
 			filesInfo = FileInfoReader.getFileInfo("repo_info/filtered-files.txt");
+//			for (Entry<String, List<LineInfo>> entry : filesInfo.entrySet()) {
+//				LOGGER.info(entry.getKey() + ": Lines in filtered files: "+ filesInfo.size());
+//			}
 		} catch (IOException e) {
 			LOGGER.warn("Not possible to read repo_info/filtered-files.txt file. File filter step will not be executed!");
 			filesInfo = null;
@@ -145,8 +148,11 @@ public class GitTruckFactor {
  			 				
 			List<NewFileInfo> files = fileExtractor.execute();
 			files = linguistExtractor.setNotLinguist(files);	
-			if(filesInfo != null) 
-				applyFilterFiles(filesInfo.get(repositoryName), files);
+			if(filesInfo != null && filesInfo.size()>0) 
+				if(filesInfo.containsKey(repositoryName))
+					applyFilterFiles(filesInfo.get(repositoryName), files);
+				else
+					LOGGER.warn("No filesInfo for " + repositoryName);
 			
 			if(modulesInfo != null && modulesInfo.containsKey(repositoryName))
 				setModules(modulesInfo.get(repositoryName), files);

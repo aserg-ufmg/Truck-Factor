@@ -154,7 +154,7 @@ public class GreedyTruckFactor extends TruckFactor {
 		}
 	}
 	private void printTF(String repName, Map<Integer, Float> truckMap) {
-		if (truckMap != null){
+		if (!truckMap.isEmpty()){
 			float coverage = truckMap.size() == 1 ? 0f : truckMap.get(tfAuthorInfo.size())*100;
 			System.out.format("TF = %d (coverage = %.2f%%)\nTF authors (Developer;Files;Percentage):\n", tfAuthorInfo.size(), coverage);
 			for (String tfInfo : tfAuthorInfo) {
@@ -162,7 +162,7 @@ public class GreedyTruckFactor extends TruckFactor {
 			}
 		}
 		else
-			LOGGER.warn("No authorship information enough to calculate the TF. Verify the number of files and commit available after filter steps");
+			LOGGER.error("No authorship information enough to calculate the TF. Verify the number of files and commit available after filter steps");
 	}
 
 }

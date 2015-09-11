@@ -9,12 +9,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.io.LineReader;
+
 public class FileInfoReader {
 			
 	public static Map<String, List<LineInfo>> getFileInfo(String fileName) throws IOException{
 		Map<String, List<LineInfo>> fileInfoMap =  new HashMap<String, List<LineInfo>>();
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		CRLFLineReader lineReader = new CRLFLineReader(br);
+		LineReader lineReader = new LineReader(br);
 		String sCurrentLine;
 		String[] values;
 		int countcfs = 0;
@@ -30,7 +32,7 @@ public class FileInfoReader {
 			}
 			fileInfoMap.get(rep).add(new LineInfo(rep, Arrays.asList(values).subList(1, values.length)));
 		}
-		lineReader.close();
+		//lineReader.close();
 		return fileInfoMap;
 	}
 
