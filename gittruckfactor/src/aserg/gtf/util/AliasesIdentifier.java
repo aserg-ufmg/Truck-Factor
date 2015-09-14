@@ -5,19 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.auth.AUTH;
 
 import aserg.gtf.dao.authorship.DeveloperDAO;
-import aserg.gtf.dao.authorship.FileDAO;
 import aserg.gtf.dao.authorship.RepositoryDAO;
 import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.DevStatus;
 import aserg.gtf.model.authorship.Developer;
-import aserg.gtf.model.authorship.FileAuthors;
 import aserg.gtf.model.authorship.Repository;
 import aserg.gtf.model.authorship.RepositoryStatus;
 

@@ -5,24 +5,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 
 import aserg.gtf.dao.LogCommitDAO;
-import aserg.gtf.dao.ProjectInfoDAO;
 import aserg.gtf.model.LogCommitFileInfo;
 import aserg.gtf.model.LogCommitInfo;
-import aserg.gtf.model.ProjectInfo;
 import aserg.gtf.task.AbstractTask;
-import aserg.gtf.task.DOACalculator;
-import aserg.gtf.util.CRLFLineReader;
 
 public class GitLogExtractor extends AbstractTask<Map<String, LogCommitInfo>>{
 	private static final Logger LOGGER = Logger.getLogger(GitLogExtractor.class);

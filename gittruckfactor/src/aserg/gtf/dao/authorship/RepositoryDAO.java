@@ -10,8 +10,6 @@ import java.util.Set;
 import javax.persistence.Query;
 
 import aserg.gtf.dao.GenericDAO;
-import aserg.gtf.dao.PersistThread;
-import aserg.gtf.model.ProjectInfo;
 import aserg.gtf.model.authorship.File;
 import aserg.gtf.model.authorship.FileAuthors;
 import aserg.gtf.model.authorship.Repository;

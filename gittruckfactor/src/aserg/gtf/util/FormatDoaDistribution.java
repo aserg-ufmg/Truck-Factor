@@ -1,10 +1,7 @@
 package aserg.gtf.util;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import aserg.gtf.dao.authorship.FileDAO;
 import aserg.gtf.dao.authorship.RepositoryDAO;
 import aserg.gtf.model.authorship.FileAuthors;
 

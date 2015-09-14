@@ -1,9 +1,6 @@
 package aserg.gtf.task;
 
 import java.io.IOException;
-import java.util.List;
-
-import aserg.gtf.model.NewFileInfo;
 
 public abstract class AbstractTask <T>{
 	protected String repositoryPath;

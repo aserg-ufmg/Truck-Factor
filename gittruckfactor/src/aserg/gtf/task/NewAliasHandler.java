@@ -1,32 +1,18 @@
 package aserg.gtf.task;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.commons.lang3.StringUtils;
 
-import aserg.gtf.dao.LogCommitDAO;
-import aserg.gtf.dao.ProjectInfoDAO;
-import aserg.gtf.model.LogCommitFileInfo;
 import aserg.gtf.model.LogCommitInfo;
-import aserg.gtf.model.NewFileInfo;
-import aserg.gtf.model.ProjectInfo;
-import aserg.gtf.model.authorship.Developer;
-import aserg.gtf.util.Alias;
-import aserg.gtf.util.CRLFLineReader;
 import aserg.gtf.util.LineInfo;
 
 public class NewAliasHandler{

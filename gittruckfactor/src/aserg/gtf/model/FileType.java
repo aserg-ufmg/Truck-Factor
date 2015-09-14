@@ -1,10 +1,7 @@
 package aserg.gtf.model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.jcabi.immutable.Array;
 
 public enum FileType {
 	JAVA, JAVASCRIPT, PHP, RUBY, PYTHON, C_LIKE, DOCUMENTATION, EXAMPLES, JSON, HTML, CSS, OTHERLANGUAGES, LIBRARY, NOTIDENTIFIED, OTHER, THIRD;

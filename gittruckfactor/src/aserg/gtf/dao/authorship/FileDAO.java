@@ -1,18 +1,9 @@
 package aserg.gtf.dao.authorship;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.persistence.Query;
 
 import aserg.gtf.dao.GenericDAO;
 import aserg.gtf.dao.PersistThread;
-import aserg.gtf.model.CommitInfo;
-import aserg.gtf.model.LogCommitFileInfo;
 import aserg.gtf.model.authorship.File;
 
 

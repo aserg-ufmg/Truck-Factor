@@ -9,17 +9,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import javax.persistence.Query;
+import org.apache.log4j.Logger;
 
 import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.Developer;
 import aserg.gtf.model.authorship.File;
-import aserg.gtf.model.authorship.FileAuthors;
 import aserg.gtf.model.authorship.Repository;
-import aserg.gtf.task.DOACalculator;
 
 import com.google.common.collect.Sets;
-import org.apache.log4j.Logger;
 
 public class GreedyTruckFactor extends TruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(TruckFactor.class);

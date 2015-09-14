@@ -14,10 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.apache.http.impl.client.AIMDBackoffManager;
 import org.eclipse.persistence.annotations.Index;
-
-import aserg.gtf.model.authorship.Developer;
 
 @Entity
 public class LogCommitInfo extends AbstractEntity{

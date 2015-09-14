@@ -7,7 +7,6 @@ import javax.persistence.Query;
 import aserg.gtf.dao.GenericDAO;
 import aserg.gtf.dao.PersistThread;
 import aserg.gtf.model.authorship.Developer;
-import aserg.gtf.model.authorship.Repository;
 
 
 public class DeveloperDAO extends GenericDAO<Developer> {

@@ -1,16 +1,13 @@
 package aserg.gtf;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import aserg.gtf.model.LogCommitInfo;
 import aserg.gtf.model.NewFileInfo;
 import aserg.gtf.model.authorship.Repository;
-import aserg.gtf.task.AliasHandler;
 import aserg.gtf.task.DOACalculator;
 import aserg.gtf.task.NewAliasHandler;
 import aserg.gtf.task.extractor.FileInfoExtractor;
@@ -18,7 +15,6 @@ import aserg.gtf.task.extractor.GitLogExtractor;
 import aserg.gtf.task.extractor.LinguistExtractor;
 import aserg.gtf.truckfactor.GreedyTruckFactor;
 import aserg.gtf.truckfactor.TruckFactor;
-import aserg.gtf.util.Alias;
 import aserg.gtf.util.FileInfoReader;
 import aserg.gtf.util.LineInfo;
 

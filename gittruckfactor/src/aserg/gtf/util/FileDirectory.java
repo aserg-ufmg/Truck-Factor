@@ -1,6 +1,5 @@
 package aserg.gtf.util;
 
-import java.util.Map.Entry;
 
 public class FileDirectory extends Directory{
 	private String author;
