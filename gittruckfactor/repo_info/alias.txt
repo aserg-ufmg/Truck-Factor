@@ -1,2 +1,483 @@
-####### List of user name aliases #######
-#git_repository_name;user_name;user_alias_name
+#REPOSITORY;NAME;ALIAS
+mrdoob/three.js;Sébastien Valette;Sebastien Valette
+mrdoob/three.js;Dustbin;dustbin
+meteor/meteor;matt debergalis;Matt DeBergalis
+less/less.js;ForbesLindesay;Forbes Lindesay
+iojs/io.js;Tj Holowaychuk;TJ Holowaychuk
+Leaflet/Leaflet;florianf;florian
+Leaflet/Leaflet;Per Liedman;perliedman
+codemirror/CodeMirror;ForbesLindesay;Forbes Lindesay
+codemirror/CodeMirror;Jakub Vrána;Jakub Vrana
+mozilla/pdf.js;Julian Viereck;Julian Vierec
+gradle/gradle;jbnizet;JB Nizet
+gradle/gradle;Kallin;kallin
+gradle/gradle;adammurdoch;Adam Murdoch
+gradle/gradle;Adam Murdoch;adammurdoch
+diaspora/diaspora;danielgrippi;Daniel Grippi
+diaspora/diaspora;danielgrippi;Daniel Grippi
+diaspora/diaspora;danielgrippi;Daniel Grippi
+diaspora/diaspora;movilla;Movilla
+mitchellh/vagrant;Elliot Segler;elliotsegler
+ruby/ruby;kosaki;kosako
+thoughtbot/paperclip;mankyuhan;Mankyu Han
+caskroom/homebrew-cask;andystanton;Andy Stanton
+caskroom/homebrew-cask;Martin madsen;Martin Madsen
+caskroom/homebrew-cask;grahammiln;Graham Miln
+fog/fog;leehuffman;Lee Huffman
+chef/chef;deepalijagtap;Deepali Jagtap
+chef/chef;Daniel DeLeo;danielsdeleo
+chef/chef;Miguel Cabeça;Miguel Cabeca
+sferik/twitter;Ray Krueger;raykrueger
+Shopify/active_merchant;codyfauser;Cody Fauser
+Shopify/active_merchant;codyfauser;Cody Fauser
+Shopify/active_merchant;codyfauser;Cody Fauser
+prawnpdf/prawn;jonathangreenberg;Jonathan Greenberg
+bundler/bundler;Andre Arko;André Arko
+JohnLangford/vowpal_wabbit;sidsen;sisen
+rails/rails;maximerety;Maxime RETY
+rails/rails;Steve;steve
+rails/rails;Steve;steve
+rails/rails;Dmitry Vorotilin;Dmitriy Vorotilin
+rails/rails;Tadas Tamošauskas;Tadas Tamosauskas
+rails/rails;mark;Mark
+rails/rails;Pivotal  Labs;Pivotal Labs
+rails/rails;Pivotal Labs;Pivotal  Labs
+rails/rails;Matt Bauer;mattbauer
+rails/rails;rsl;RSL
+rails/rails;Adam;adam
+rails/rails;Scott Willson;scottwillson
+puppetlabs/puppet;glenn.sarti;glennsarti
+Homebrew/homebrew;Thomas Strathmann;Thomas Stratmann
+Homebrew/homebrew;jeroen;Jeroen
+Homebrew/homebrew;Samuel John;samueljohn
+Homebrew/homebrew;elliottcable;ELLIOTTCABLE
+Homebrew/homebrew;Ealden Esto E. Escanan;Ealden Esto E. Escañan
+Homebrew/homebrew;Marc Simpson;Mark Simpson
+Homebrew/homebrew;Brian Smyth;Brian Smith
+Homebrew/homebrew;sergey;Sergey
+Homebrew/homebrew;ELLIOTTCABLE;elliottcable
+Homebrew/homebrew;iandol;Iandol
+#Homebrew/homebrew;�?涛;�?痴
+Homebrew/homebrew;Tim Taylor;Tom Taylor
+Homebrew/homebrew;Tim Taylor;Tom Taylor
+Homebrew/homebrew;Barberio;barberio
+Homebrew/homebrew;lukas;Lukas
+Homebrew/homebrew;Patrick;patricks
+Homebrew/homebrew;Adrian Rego;adrianrego
+Homebrew/homebrew;Nicholas Harteau;nicholas harteau
+Homebrew/homebrew;Jeroen;jeroen
+Homebrew/homebrew;Pete Baker;Peter Baker
+Homebrew/homebrew;Jiayong Ou;jiayong.ou
+Homebrew/homebrew;Jonathan Wright;Jonathan Wight
+Homebrew/homebrew;sunteya;Sunteya
+Homebrew/homebrew;G Coco;gcoco
+ipython/ipython;vivainio;vivainio2
+ipython/ipython;Walter Doerwald;walter.doerwald
+ipython/ipython;Ernie French;ernie french
+ipython/ipython;Matthias BUSSONNIER;Matthias Bussonnier
+saltstack/salt;Ianaré Sévi;ianaré sévi
+saltstack/salt;Eric Johnson;Erik Johnson
+saltstack/salt;Erik Johnson;Eric Johnson
+saltstack/salt;ranl;ran
+saltstack/salt;Steve Weber;Steverweber
+saltstack/salt;Steve Weber;steverweber
+saltstack/salt;olliewalsh;Ollie Walsh
+saltstack/salt;ZHANG Cheng;Zhang Cheng
+saltstack/salt;Tomas Havlas;tomashavlas
+saltstack/salt;robert.fach;Robert Fach
+saltstack/salt;Alexandre Letourneau;Alexandre Létourneau
+boto/boto;MaximVeksler;Maxim Veksler
+boto/boto;Mitch.Garnaat;Mitch Garnaat
+boto/boto;Mitch.Garnaat;Mitch Garnaat
+boto/boto;Mitch Garnaat;Mitch.Garnaat
+getsentry/sentry;German M. Bravo;Germán M. Bravo
+sampsyo/beets;Adrian Sampson;adrian.sampson
+sampsyo/beets;adrian.sampson;Adrian Sampson
+Eugeny/ajenti;Ivlev Denis;ivlevdenis
+Eugeny/ajenti;Eugene Pankov;Eugeny Pankov
+divio/django-cms;Dylann CORDEL;DylannCordel
+divio/django-cms;Pigletto;pigletto
+divio/django-cms;stefanfoulis;Stefan Foulis
+divio/django-cms;stefanfoulis;Stefan Foulis
+django/django-old;gwilson;wilson
+spotify/luigi;Tommy Engstrom;Tommy Engström
+ansible/ansible;Benno Joy;bennojoy
+ansible/ansible;Sébastien Bocahu;Sebastien Bocahu
+ansible/ansible;bennojoy;Benno Joy
+pydata/pandas;tshauck;thauck
+#odoo/odoo;pinky;Fabien Pinckaers
+odoo/odoo;Cedric Snauwaert;Cédric Snauwaert
+odoo/odoo;MTR (OpenERP);mtr (Open ERP)
+odoo/odoo;VRA(OpenERP);VRA(Open ERP)
+odoo/odoo;PAP(OpenERP);pap(openerp)
+odoo/odoo;PAP(OpenERP);pap (openerp)
+odoo/odoo;PAP(OpenERP);PAP(Openerp)
+odoo/odoo;PAP(OpenERP);PAP (Openerp)
+odoo/odoo;PAP(OpenERP);pap (OpenERP)
+odoo/odoo;MTR(OpenERP);MTR (OpenERP)
+odoo/odoo;MTR(OpenERP);MTR(Openerp)
+odoo/odoo;Chandni Machchhar(OpenERP Trainee);Chandni Machchhar (OpenERP Trainee)
+odoo/odoo;ksh (Axelor);KSH(Axelor)
+odoo/odoo;JMA (OpenERP);JMA(OpenERP)
+odoo/odoo;Stephane Wirtel;Stéphane Wirtel
+odoo/odoo;saz(openerp);saz(OpenERP)
+odoo/odoo;uco;UCO
+odoo/odoo;dbr(Open ERP);DBR(Open ERP)
+odoo/odoo;Raphael Valyi;Raphaël Valyi
+odoo/odoo;RCH(OpenERP);RCH(OpenERP).
+odoo/odoo;Sbh(Openerp);SBH(OpenERP)
+odoo/odoo;Hardik Ansodariy (OpenERP);Hardik Ansodariya (OpenERP)
+odoo/odoo;Anup (OpenERP);Anup(OpenERP)
+odoo/odoo;atp (OpenERP);ATP(OpenERP)
+odoo/odoo;Raphaël Valyi;Raphael Valyi
+odoo/odoo;Christophe Chauvet;Christphe Chauvet
+odoo/odoo;stw;STW
+odoo/odoo;Ysa (Open ERP);YSA (OpenERP)
+odoo/odoo;Olivier LAURENT;Olivier Laurent
+odoo/odoo;Najlaâ EL KHAYAT;Najlaâ El Khayat
+odoo/odoo;UCO(OpenERP); UCO(OpenERP)
+odoo/odoo;Jean-Christophe VASSORT; Jean-Christophe VASSORT
+odoo/odoo;RME (OpenERP);RME(OpenERP)
+odoo/odoo;Saurang Suthar(OpenERP);Saurang Suthar (OpenERP)
+odoo/odoo;YSA(Open ERP);Ysa(Open ERP)
+odoo/odoo;YSA(Open ERP);ysa(OpenERP)
+odoo/odoo;YSA(Open ERP);YSA(OpenERP)
+odoo/odoo;YSA(Open ERP);Ysa(OpenERP)
+odoo/odoo;jvo(OpenERP);jvo(Open ERP)
+odoo/odoo;VIR(OpenERP);vir(OpenERP)
+odoo/odoo;Christophe Chauvet(Syleam);Christophe Chauvet (Syleam)
+odoo/odoo;rch (Open ERP);rch (OpenERP)
+odoo/odoo;SME(Tiny/Axelor);SME(tiny/Axelor)
+odoo/odoo;uco (OpenERP);uco (Open ERP)
+odoo/odoo;uco (OpenERP);UCO (OpenERP)
+odoo/odoo;uco (OpenERP);UCO(OpenERP)
+odoo/odoo;uco (OpenERP);uco(OpenERP)
+odoo/odoo;ATP (Open ERP);atp (Open ERP)
+odoo/odoo;sbh (Open ERP);Sbh (Open ERP)
+odoo/odoo;Ajay Patel;Jay Patel
+odoo/odoo;PSO(OpenERP);pso (OpenERP)
+odoo/odoo;PSO(OpenERP);PSO(Open ERP)
+odoo/odoo;Ravi Gohil (OpenERP); Ravi Gohil (OpenERP)
+odoo/odoo;MTR;mtr
+odoo/odoo;Rifakat (OpenERP); Rifakat (OpenERP)
+odoo/odoo;KSA (Open ERP);ksa (Open ERP)
+odoo/odoo;KSA (Open ERP);KSA (OpenERP)
+odoo/odoo;Bharat Devnani (OpenERP);Bharat Devnani (Open ERP)
+odoo/odoo;RGA(openERP);RGA (OpenERP)
+odoo/odoo;RGA(openERP);RGA(OpenERP)
+odoo/odoo;RGA(openERP);RGA(Open ERP)
+odoo/odoo;Dhara (OpenERP);Dhara (Open ERP)
+odoo/odoo;noz (OpenERP);NOZ (OpenERP)
+odoo/odoo;Vishmita;vishmita
+odoo/odoo;aag (OpenERP);aag(OpenERP)
+odoo/odoo;aag (OpenERP);aag (Open ERP)
+odoo/odoo;Mod2 Team(OpenERP);Mod2 Team (OpenERP)
+odoo/odoo;Jay (Open ERP);Jay(Open ERP)
+odoo/odoo;Jay (Open ERP);Jay (OpenERP)
+odoo/odoo;psi (Open ERP);PSI (OpenERP)
+odoo/odoo;psi (Open ERP);PSI (Openerp)
+odoo/odoo;uco (Open ERP);uco(Open ERP)
+odoo/odoo;Amit Dodiya (OpenERP); Amit Dodiya (OpenERP)
+odoo/odoo;RCH(Open ERP);rch (Open ERP)
+odoo/odoo;RCH(Open ERP);RCH(OpenERP)
+odoo/odoo;RCH(Open ERP);rch(OpenERP)
+odoo/odoo;DSH (Open ERP);dsh (Open ERP)
+odoo/odoo;DSH (Open ERP);dsh(Open ERP)
+odoo/odoo;rga;Rga
+odoo/odoo;Stéphane Wirtel;Stephane Wirtel
+odoo/odoo;Olivier Laurent;Olivier LAURENT
+odoo/odoo;ARA (OpenERP);ARA(OpenERP)
+odoo/odoo;Cristian Salamea (GnuThink);Cristian Salamea (Gnuthink)
+odoo/odoo;ChristopheChauvet(syleam);Christophe Chauvet(Syleam)
+odoo/odoo;ChristopheChauvet(syleam);Christophe chauvet(Syleam)
+odoo/odoo;Géry Debongnie;Gery Debongnie
+odoo/odoo;AMP (OpenERP);Amp (Open ERP)
+odoo/odoo;mtr;MTR
+odoo/odoo;Anael Closson;Anaël Closson
+odoo/odoo;RHA (Open ERP);RHA (OpenERP)
+odoo/odoo;GPA(OpenERP);GPA (OpenERP)
+odoo/odoo;GPA(OpenERP);GPA(Open ERP)
+odoo/odoo;ysa, apa;YSA,APA
+odoo/odoo;vishmita;Vishmita
+odoo/odoo;Rga;rga
+yiisoft/yii2;Ivo Kund;ivokund
+yiisoft/yii2;Suralc;suralc
+phacility/phabricator;tuomaspelkonen;Tuomas Pelkonen
+phacility/phabricator;KorvinSzanto;Korvin Szanto
+phacility/phabricator;Korvin Szanto;KorvinSzanto
+kriswallsmith/assetic;Dmitriy Savchenko;Dmitry Savchenko
+kriswallsmith/assetic;jarrod Nettles;Jarrod Nettles
+puphpet/puphpet;shivapoudel;Shiva Poudel
+puphpet/puphpet;Kevin Boyd;Kevin Bond
+android/platform_frameworks_base;daniel_tomas;Daniel Tomas
+android/platform_frameworks_base;leo_hsu;Leo Hsu
+android/platform_frameworks_base;Oscar Rydhé;Oscar Rydhe
+joomla/joomla-cms;Nils Ruckmann;Nils Rückmann
+joomla/joomla-cms;Lao Neo;laoneo
+joomla/joomla-cms;bentasker;Ben Tasker
+joomla/joomla-cms;Demis Palma;demis-palma
+joomla/joomla-cms;chrisdavenport;Chris Davenport
+joomla/joomla-cms;kyleledbetter;Kyle Ledbetter
+joomla/joomla-cms;Jisse Reitsma;jissereitsma
+joomla/joomla-cms;klas;Klas
+joomla/joomla-cms;roland-d;RolandD
+drupal/drupal;Justin Randell;justinrandell
+composer/composer;Morgan BRUNOT;Morgan Brunot
+WordPress/WordPress;iandstewart;Ian Stewart
+WordPress/WordPress;lancewillett;Lance Willett
+WordPress/WordPress;markjaquith;Mark Jaquith
+netty/netty;fredericBregier;Frederic Bregier
+clojure/clojure;fogus;Fogus
+libgdx/libgdx;nathan.sweet;Nathan Sweet
+libgdx/libgdx;TomSki;Tomski
+libgdx/libgdx;tamasjano@gmail.com;TamasJano@gmail.com
+nicolasgramlich/AndEngine;NicolasGramlich;Nicolas Gramlich
+nicolasgramlich/AndEngine;Nicolas Gramlich;NicolasGramlich
+apache/cassandra;Bjorn Hegerfors;Björn Hegerfors
+apache/cassandra;Sankalp Kohli;sankalp kohli
+JetBrains/intellij-community;alexey.chmutov;Alexey Chmutov
+JetBrains/intellij-community;Kirill.Safonov;Kirill Safonov
+JetBrains/intellij-community;Dmitry Krasilschikov;Dmitry.Krasilschikov
+JetBrains/intellij-community;Maxim.Mossienko;Maxim Mossienko
+JetBrains/intellij-community;Maxim.Mossienko;Maxim Mossienko
+JetBrains/intellij-community;Gregory Shrago;Gregory.Shrago
+JetBrains/intellij-community;alexey.ivanov;Alexey Ivanov
+JetBrains/intellij-community;Ekaterina.Tuzova;Ekaterina Tuzova
+JetBrains/intellij-community;Sergey Vasiliev;sergey.vasiliev
+JetBrains/intellij-community;Konstantin Ulitin;Konstantin.Ulitin
+JetBrains/intellij-community;Rustam Vishnyakov;Rustam.Vishnyakov
+JetBrains/intellij-community;Ekaterina Tuzova;Ekaterina.Tuzova
+JetBrains/intellij-community;Yann Cébron;Yann Cebron
+JetBrains/intellij-community;Eugene Kudelevsky;Eugene.Kudelevsky
+JetBrains/intellij-community;Denis Zhdanov;Denis.Zhdanov
+JetBrains/intellij-community;Vladimir.Orlov;Vladimir Orlov
+JetBrains/intellij-community;Erokhin Stanislav;Erochin Stanislav
+JetBrains/intellij-community;Yann Cebron;Yann Cébron
+JetBrains/intellij-community;Rustam.Vishnyakov;Rustam Vishnyakov
+cocos2d/cocos2d-x;Edward Zhou;edwardzhou
+cocos2d/cocos2d-x;Nat Weiss;NatWeiss
+cocos2d/cocos2d-x;Romain TISSERAND;Romain Tisserand
+cocos2d/cocos2d-x;edwardzhou;Edward Zhou
+php/php-src;Andrea Faulds;Andrew Faulds
+php/php-src;André Langhorst;Andre Langhorst
+scikit-learn/scikit-learn;Jean Kossaifi;Jean  KOSSAIFI
+scikit-learn/scikit-learn;Jake Vanderplas;Jake VanderPlas
+scikit-learn/scikit-learn;Edouard Duchesnay;Edouard DUCHESNAY
+scikit-learn/scikit-learn;Jean  KOSSAIFI;Jean Kossaifi
+scikit-learn/scikit-learn;Anne-Laure Fouque;Anne-Laure FOUQUE
+scikit-learn/scikit-learn;Vincent michel;Vincent Michel
+Itseez/opencv;LeonidBeynenson;Leonid Beynenson
+Itseez/opencv;Ziyang LI;ziyangli
+Itseez/opencv;vbystricky;VBystricky
+Itseez/opencv;Sergei Nikulov;Sergey Nikulov
+bitcoin/bitcoin;Gavin Andresen;gavinandresen
+openframeworks/openFrameworks;zach lieberman;Zach Lieberman
+openframeworks/openFrameworks;Elliot Woods;elliotwoods
+openframeworks/openFrameworks;Zach Lieberman;zach lieberman
+webscalesql/webscalesql-5.6;Magnus Blåudd;Magnus Blaudd
+webscalesql/webscalesql-5.6;kent@mysql.com/c-584072d5.010-2112-6f72651.cust.bredbandsbolaget.se;kent@mysql.com/c-544072d5.010-2112-6f72651.cust.bredbandsbolaget.se
+webscalesql/webscalesql-5.6;monty@mashka.mysql.fi;monty@mishka.mysql.fi
+webscalesql/webscalesql-5.6;lars/lthalmann@mysql.com/dl145k.mysql.com;lars/lthalmann@mysql.com/dl145h.mysql.com
+webscalesql/webscalesql-5.6;lars/lthalmann@mysql.com/dl145k.mysql.com;lars/lthalmann@mysql.com/dl145j.mysql.com
+webscalesql/webscalesql-5.6;mattiasj@client-10-129-10-137.upp.off.mysql.com;mattiasj@client-10-129-10-147.upp.off.mysql.com
+webscalesql/webscalesql-5.6;pappa@c-5c0be253.1238-1-64736c10.cust.bredbandsbolaget.se;pappa@c-0c0be253.1238-1-64736c10.cust.bredbandsbolaget.se
+webscalesql/webscalesql-5.6;serg@build.mysql.com;serg@build.mysql2.com
+webscalesql/webscalesql-5.6;gluh@mysql.com/mgluh.(none);gluh@mysql.com/gluh.(none)
+webscalesql/webscalesql-5.6;miguel@light.local;Miguel@light.local
+webscalesql/webscalesql-5.6;jmiller/ndbdev@mysql.com/ndb15.mysql.com;jmiller/ndbdev@mysql.com/ndb13.mysql.com
+webscalesql/webscalesql-5.6;petr@mysql.com;peter@mysql.com
+webscalesql/webscalesql-5.6;mikael@c-4908e253.1238-1-64736c10.cust.bredbandsbolaget.se;mikael@c-4909e253.1238-1-64736c10.cust.bredbandsbolaget.se
+webscalesql/webscalesql-5.6;tulin@dl145c.mysql.com;tulin@dl145b.mysql.com
+webscalesql/webscalesql-5.6;kent@mysql.com/c-544072d5.010-2112-6f72651.cust.bredbandsbolaget.se;kent@mysql.com/c-644072d5.010-2112-6f72651.cust.bredbandsbolaget.se
+webscalesql/webscalesql-5.6;guilhem@gbichot3.local;guilhem@gbichot4.local
+webscalesql/webscalesql-5.6;guilhem@gbichot3.local;guilhem@gbichot2.local
+webscalesql/webscalesql-5.6;mikael@dator5.(none);mikael@dator6.(none)
+webscalesql/webscalesql-5.6;mikael@dator5.(none);mikael@dator3.(none)
+webscalesql/webscalesql-5.6;Mikael Ronstrom;Mikael Ronström
+webscalesql/webscalesql-5.6;aelkin@dl145h.mysql.com;aelkin@dl145j.mysql.com
+webscalesql/webscalesql-5.6;kent@mysql.com/c-644072d5.010-2112-6f72651.cust.bredbandsbolaget.se;kent@mysql.com/c-634072d5.010-2112-6f72651.cust.bredbandsbolaget.se
+webscalesql/webscalesql-5.6;bell@50.0.168.192.in-addr.arpa;bell@52.0.168.192.in-addr.arpa
+webscalesql/webscalesql-5.6;bell@50.0.168.192.in-addr.arpa;bell@51.0.168.192.in-addr.arpa
+webscalesql/webscalesql-5.6;Vladislav Vaintroub;vladislav vaintroub
+webscalesql/webscalesql-5.6;mkindahl@dl145h.mysql.com;mkindahl@dl145k.mysql.com
+webscalesql/webscalesql-5.6;pekka@clam.ndb.mysql.com/ndb15.mysql.com;pekka@clam.ndb.mysql.com/ndb13.mysql.com
+webscalesql/webscalesql-5.6;Martin Skold;Martin Sköld
+webscalesql/webscalesql-5.6;mikron@c-1e0be253.1238-1-64736c10.cust.bredbandsbolaget.se;mikron@c-130be253.1238-1-64736c10.cust.bredbandsbolaget.se
+v8/v8;Jacob.Bramley@arm.com;jacob.bramley@arm.com
+torvalds/linux;Thomas Langer;Thomas Lange
+torvalds/linux;Sangsu Park;SangSu Park
+torvalds/linux;Ethan Zhao;ethan.zhao
+torvalds/linux;James M Leddy;James M. Leddy
+torvalds/linux;Daniel Thompson;Daniel THOMPSON
+torvalds/linux;H. J. Lu;H.J. Lu
+torvalds/linux;Haavard Skinnemoen;Havard Skinnemoen
+torvalds/linux;Haavard Skinnemoen;Havard Skinnemoen
+torvalds/linux;Thomas Huehn;Thomas Hoehn
+torvalds/linux;Graf Yang;Graff Yang
+torvalds/linux;jack wang;Jack Wang
+torvalds/linux;stephen hemminger;Stephen Hemminger
+torvalds/linux;stephen hemminger;Stephen Hemminger
+torvalds/linux;stephen hemminger;Stephen Hemminger
+torvalds/linux;stephen hemminger;Stephen Hemminger
+torvalds/linux;stephen hemminger;Stephen Hemminger
+torvalds/linux;hao liu;Hao Liu
+torvalds/linux;J�rg Schummer;Jorg Schummer
+torvalds/linux;françois romieu;Francois Romieu
+torvalds/linux;françois romieu;François Romieu
+torvalds/linux;Noone Important;NooneImportant
+torvalds/linux;Aleksej Makarov;Aleksey Makarov
+torvalds/linux;Zhang, Yanmin;Zhang Yanmin
+torvalds/linux;Roel Kluin;roel kluin
+torvalds/linux;bibo, mao;bibo mao
+torvalds/linux;Jonthan Brassow;Jonathan Brassow
+torvalds/linux;Deepak K;Deepak S
+torvalds/linux;Per Dalen;Per Dalén
+torvalds/linux;Himanshu Madhani;Himanshu Madani
+torvalds/linux;Manish Chopra;Manish chopra
+torvalds/linux;ChenLi Tien;Chen-Li Tien
+torvalds/linux;Maxin B John;Maxin B. John
+torvalds/linux;Dave Wysochanski;dave wysochanski
+torvalds/linux;wanzongshun;Wan ZongShun
+torvalds/linux;Jisheng Zhang;JiSheng Zhang
+torvalds/linux;Jisheng Zhang;JiSheng Zhang
+torvalds/linux;Nicolas Thery;Nicolas THERY
+torvalds/linux;Hongbo Zhang;hongbo.zhang
+torvalds/linux;Stéphane Voltz;Stephane VOLTZ
+torvalds/linux;Maxin B. John;Maxin B John
+torvalds/linux;Stefan Sørensen;Stefan Sorensen
+torvalds/linux;Ravishankar karkala Mallikarjunayya;Ravishankar Karkala Mallikarjunayya
+torvalds/linux;Jason J. herne;Jason J. Herne
+torvalds/linux;Vijaya Mohan Guvva;Vijay Mohan Guvva
+torvalds/linux;Eric Bénard;Eric BENARD
+torvalds/linux;Eric Bénard;Eric Benard
+torvalds/linux;Mark Gross;mark gross
+torvalds/linux;vimal singh;Vimal Singh
+torvalds/linux;figo.zhang;Figo.zhang
+torvalds/linux;Du, Changbin;Du, ChangbinX
+torvalds/linux;Willson Callan;Wilson Callan
+torvalds/linux;Yang Wei;Yang, Wei
+torvalds/linux;Stephen Hemminger;stephen hemminger
+torvalds/linux;Stephen Hemminger;stephen hemminger
+torvalds/linux;Clément Calmels;Clement Calmels
+torvalds/linux;Liu ShuoX;Liu Shuo
+torvalds/linux;Liu ShuoX;Liu Shuo
+torvalds/linux;Haibo Liu;HaiboLiu
+torvalds/linux;Prasanna S Panchamukhi;Prasanna S. Panchamukhi
+torvalds/linux;Carmelo AMOROSO;Carmelo Amoroso
+torvalds/linux;Steven Hardy;Steve Hardy
+torvalds/linux;Edgar E. Iglesias;Edgar E Iglesias
+torvalds/linux;Gabriel Fernandez;Gabriel FERNANDEZ
+torvalds/linux;Gaëtan Carlier;Gaetan Carlier
+torvalds/linux;Wu Fei;Wufei
+torvalds/linux;Rémi Denis-Courmont;R�mi Denis-Courmont
+torvalds/linux;Yang, Sheng;Yang Sheng
+torvalds/linux;Denys Vlasenko;Denis Vlasenko
+torvalds/linux;Shahar Levi;Shahar Lev
+torvalds/linux;Theodore Ts'o;Theodore Tso
+torvalds/linux;Vincent Cuissard;Vincent CUISSARD
+torvalds/linux;hongbo.zhang;Hongbo Zhang
+torvalds/linux;JunweiZhang;Junwei Zhang
+torvalds/linux;Thibaut Varene;Thibaut VARENE
+torvalds/linux;Pawel MOLL;Pawel Moll
+torvalds/linux;Pawel MOLL;Pawel Moll
+torvalds/linux;Dmitry Monakhov;Dmitriy Monakhov
+torvalds/linux;Yang Sheng;yangsheng
+torvalds/linux;Yang Zhang;Yong Zhang
+torvalds/linux;Yan Zheng;Yan, Zheng
+torvalds/linux;Yan Zheng;Yan, Zheng
+torvalds/linux;Lawrence Rust;lawrence rust
+torvalds/linux;Youquan Song;Youquan,Song
+torvalds/linux;Denis Vlasenko;Denys Vlasenko
+torvalds/linux;Denis Vlasenko;Denys Vlasenko
+torvalds/linux;Dmitry Tarnyagin;Dmitry.Tarnyagin
+torvalds/linux;Philippe Rétornaz;Philippe Retornaz
+torvalds/linux;Jean-Christophe DUBOIS;Jean-Christophe Dubois
+torvalds/linux;Ezequiel Garcia;Ezequiel García
+torvalds/linux;Ezequiel Garcia;Ezequiel García
+torvalds/linux;NeilBrown;Neil Brown
+torvalds/linux;david decotigny;David Decotigny
+torvalds/linux;Loic PALLARDY;Loic Pallardy
+torvalds/linux;Eric W. Biedermann;Eric W. Biederman
+torvalds/linux;Eric W. Biedermann;Eric W. Biederman
+torvalds/linux;Eric W. Biedermann;Eric W. Biederman
+torvalds/linux;Eric W. Biedermann;Eric W. Biederman
+torvalds/linux;Eric W. Biedermann;Eric W. Biederman
+torvalds/linux;Hong Zhiguo;Hong zhi guo
+torvalds/linux;Bob Picco;bob picco
+torvalds/linux;dmitry pervushin;Dmitry Pervushin
+torvalds/linux;EGRY Gabor;Egry Gabor
+torvalds/linux;Pravin B Shelar;Pravin B. Shelar
+torvalds/linux;John Stultz;john stultz
+torvalds/linux;Julien Delacou;Julien DELACOU
+torvalds/linux;stephane eranian;Stephane Eranian
+torvalds/linux;stephane eranian;Stephane Eranian
+torvalds/linux;Alexander Smirnov;Alexandr Smirnov
+torvalds/linux;Zero.Lin;zero.lin
+torvalds/linux;Huajun Li;huajun li
+torvalds/linux;Srinivas Pandruvada;srinivas pandruvada
+torvalds/linux;Pawel Moll;Pawel MOLL
+torvalds/linux;Loic Pallardy;Loic PALLARDY
+torvalds/linux;Denis Ciocca;Denis CIOCCA
+torvalds/linux;Shyam Sunder;Shyam Sundar
+torvalds/linux;Yoann DI-RUZZA;Yoann DI RUZZA
+torvalds/linux;Xiangliang Yu;xiangliang yu
+torvalds/linux;BoxiLiu;boxi liu
+torvalds/linux;roel kluin;Roel Kluin
+torvalds/linux;roel kluin;Roel Kluin
+torvalds/linux;Matthieu Castet;Matthieu CASTET
+torvalds/linux;Matthieu Castet;Matthieu CASTET
+torvalds/linux;Dmitry Pervushin;dmitry pervushin
+torvalds/linux;Dmitry Pervushin;dmitry pervushin
+torvalds/linux;Adam Thomson;Adam Thompson
+torvalds/linux;Jason J. Herne;Jason J. herne
+torvalds/linux;Manjunath Goudar;Majunath Goudar
+torvalds/linux;J.A. Magallon;J.A. Magallón
+torvalds/linux;jing xiang;Jing Xiang
+torvalds/linux;Zhang Yanmin;Zhang, Yanmin
+torvalds/linux;John S. Gruber;John S Gruber
+torvalds/linux;Julien TINNES;Julien Tinnes
+torvalds/linux;Julien TINNES;Julien Tinnes
+torvalds/linux;Miguel Botón;Miguel Boton
+torvalds/linux;Miguel Botón;Miguel Boton
+torvalds/linux;Andrew de Quincey;Andrew de Quincy
+torvalds/linux;Andreas Faerber;Andreas Ferber
+torvalds/linux;steven finney;Steven Finney
+torvalds/linux;Dmitriy Monakhov;Dmitry Monakhov
+torvalds/linux;Andrew Vagin;Andrey Vagin
+torvalds/linux;Cindy H. Kao;Cindy H Kao
+torvalds/linux;Dmitry.Tarnyagin;Dmitry Tarnyagin
+torvalds/linux;GeunSik Lim;Geunsik Lim
+torvalds/linux;Edgar E Iglesias;Edgar E. Iglesias
+torvalds/linux;Edgar E Iglesias;Edgar E. Iglesias
+torvalds/linux;Niu Yawei;Niu YaWei
+torvalds/linux;Eric W. Biederman;Eric W. Biedermann
+torvalds/linux;Eric W. Biederman;Eric W. Biderman
+torvalds/linux;Daniel Marjamaki;Daniel Marjamäki
+torvalds/linux;Kashyap, Desai;Kashyap Desai
+torvalds/linux;Gautham R Shenoy;Gautham R. Shenoy
+torvalds/linux;Stephane Eranian;stephane eranian
+torvalds/linux;suzuki;Suzuki
+torvalds/linux;David Härdeman;David Hardeman
+torvalds/linux;Jean-Francois Dagenais;Jean-François Dagenais
+torvalds/linux;Timo Teras;Timo Teräs
+torvalds/linux;Timo Teras;Timo Ter�s
+torvalds/linux;baker.zhang;Baker Zhang
+torvalds/linux;bgardner@wabtec.com;BGardner@Wabtec.com
+torvalds/linux;Jassi Brar;jassi brar
+torvalds/linux;Pavel Emelyanov;Pavel Emelianov
+torvalds/linux;Aubrey Li;Aubrey.Li
+torvalds/linux;jon ernst;Jon Ernst
+torvalds/linux;Yusuke Goda;Yusuke.Goda
+torvalds/linux;David Decotigny;david decotigny
+torvalds/linux;David Decotigny;david decotigny
+torvalds/linux;Figo.zhang;figo.zhang
+torvalds/linux;Soren Brinkmann;Sören Brinkmann
+torvalds/linux;Yan, Zheng;Yan Zheng
+torvalds/linux;CHENG Renquan;Cheng Renquan
+torvalds/linux;liubo;Liu Bo
+torvalds/linux;liubo;Liu Bo
+torvalds/linux;Xiaolong Chen;Xiaolong CHEN
+nate-parrott/Flashlight;nate-parrott;Nate Parrott
+nate-parrott/Flashlight;nate-parrott;Nate Parrott
+sympy/sympy;ondrej.certik;Ondrej Certik
+haml/haml;nex3;Nathan Weizenbaum

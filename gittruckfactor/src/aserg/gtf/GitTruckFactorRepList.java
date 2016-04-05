@@ -33,14 +33,14 @@ public class GitTruckFactorRepList {
 		for (int i = 0; i < repArray.length; i++) {
 			try {
 				step = "begin";
-				repositoryPath = "C:/temp/repositories-log/"+repArray[i].replace('/', '-')+"/";
+				repositoryPath = "E:/backups/icse/icpc-selected-repos-logs/"+repArray[i].replace('/', '-')+"/";
 				repositoryName = repArray[i];
 				
 				
 				Map<String, List<LineInfo>> filesInfo = FileInfoReader
-						.getFileInfo("filtered-files.txt");
+						.getFileInfo("repo_info/filtered-files.txt");
 				Map<String, List<LineInfo>> aliasInfo = FileInfoReader
-						.getFileInfo("alias.txt");
+						.getFileInfo("repo_info/alias.txt");
 				
 				
 				GitLogExtractor gitLogExtractor = new GitLogExtractor(
@@ -57,15 +57,15 @@ public class GitTruckFactorRepList {
 				Map<String, LogCommitInfo> commits = gitLogExtractor.execute();
 				step = "aliashandler";
 				commits = aliasHandler.execute(repositoryName, commits);
-				step = "commits persist";
-				gitLogExtractor.persist(commits);
+//				step = "commits persist";
+//				gitLogExtractor.persist(commits);
 				
 				step = "fileExtractor";
 				List<NewFileInfo> files = fileExtractor.execute();
 				step = "linguist";
 				files = linguistExtractor.setNotLinguist(files);
-				step = "files persist";
-				fileExtractor.persist(files);
+//				step = "files persist";
+//				fileExtractor.persist(files);
 				
 				//applyFilterFiles(filesInfo.get(repositoryName), files);
 				//applyRegexFilter(files, "^src/Faker/Provider/.*");
@@ -74,11 +74,12 @@ public class GitTruckFactorRepList {
 				DOACalculator doaCalculator = new DOACalculator(repositoryPath,
 						repositoryName, commits.values(), files);
 				Repository repository = doaCalculator.execute();
-				step = "Doa Persist";
-				doaCalculator.persist(repository);
+				//step = "Doa Persist";
+				//doaCalculator.persist(repository);
 				
 				step = "TF";
 				TruckFactor truckFactor = new GreedyTruckFactor();
+				System.out.println(repositoryName+": ");
 				truckFactor.getTruckFactor(repository);
 			} catch (Exception e) {
 				System.err.format("\nException in GitTruckFactor: %s step: %s\n", repositoryName, step);

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.io.LineReader;
+
 public class Alias {
 	private String repository;
 	private String dev1;
@@ -21,7 +23,7 @@ public class Alias {
 	public static List<Alias> getAliasFromFile(String fileName) throws IOException{
 		List<Alias> fileAliases =  new ArrayList<Alias>();
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		CRLFLineReader lineReader = new CRLFLineReader(br);
+		LineReader lineReader = new LineReader(br);
 		String sCurrentLine;
 		String[] values;
 		int countcfs = 0;
@@ -64,7 +66,7 @@ public class Alias {
 	private static Alias[] readFile(String fileName) throws IOException{
 		List<Alias> fileAliases =  new ArrayList<Alias>();
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		CRLFLineReader lineReader = new CRLFLineReader(br);
+		LineReader lineReader = new LineReader(br);
 		String sCurrentLine;
 		String[] values;
 		int countcfs = 0;
