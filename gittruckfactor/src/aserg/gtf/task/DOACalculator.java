@@ -19,6 +19,7 @@ import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.File;
 import aserg.gtf.model.authorship.Repository;
 import aserg.gtf.model.authorship.RepositoryStatus;
+import aserg.gtf.util.ConfigInfo;
 
 public class DOACalculator extends AbstractTask<Repository>{
 	private static final Logger LOGGER = Logger.getLogger(DOACalculator.class);

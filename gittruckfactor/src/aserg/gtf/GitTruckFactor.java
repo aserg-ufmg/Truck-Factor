@@ -1,6 +1,8 @@
 package aserg.gtf;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -10,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -28,11 +31,18 @@ import aserg.gtf.truckfactor.GreedyTruckFactor;
 import aserg.gtf.truckfactor.TruckFactor;
 import aserg.gtf.util.FileInfoReader;
 import aserg.gtf.util.LineInfo;
+import aserg.gtf.util.ConfigInfo;
 
 public class GitTruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(GitTruckFactor.class);
+	private static Properties properties = new Properties();
+	private static InputStream input = null;
+	public static ConfigInfo config = null;
 	public static void main(String[] args) {
 		LOGGER.trace("GitTruckFactor starts");
+		
+		loadConfiguration();
+		
 		String repositoryPath = "";
 		String repositoryName = "";
 		if (args.length>0)
@@ -68,10 +78,10 @@ public class GitTruckFactor {
 		}
 		
 		
-		GitLogExtractor gitLogExtractor = new GitLogExtractor(repositoryPath, repositoryName);	
-		NewAliasHandler aliasHandler =  aliasInfo == null ? null : new NewAliasHandler(aliasInfo.get(repositoryName));
 		FileInfoExtractor fileExtractor = new FileInfoExtractor(repositoryPath, repositoryName);
 		LinguistExtractor linguistExtractor =  new LinguistExtractor(repositoryPath, repositoryName);
+		NewAliasHandler aliasHandler =  aliasInfo == null ? null : new NewAliasHandler(aliasInfo.get(repositoryName));
+		GitLogExtractor gitLogExtractor = new GitLogExtractor(repositoryPath, repositoryName);	
 		
 		//Persist commit info
 		//gitLogExtractor.persist(commits);
@@ -89,8 +99,6 @@ public class GitTruckFactor {
 		LOGGER.trace("GitTruckFactor end");
 	}
 
-	
-	
 	private static void calculateTF(String repositoryPath,
 			String repositoryName, 
 			Map<String, List<LineInfo>> filesInfo, 
@@ -126,6 +134,19 @@ public class GitTruckFactor {
 			TruckFactor truckFactor = new GreedyTruckFactor();
 			truckFactor.getTruckFactor(repository);
 			
+	}
+	
+	private static void loadConfiguration() {
+		try {
+			input = new FileInputStream("config.properties");
+			properties.load(input);
+			float normalizedDOA = Float.parseFloat((String) properties.get("normalizedDOA"));
+			float absoluteDOA = Float.parseFloat((String) properties.get("absoluteDOA"));
+			float tfCoverage = Float.parseFloat((String) properties.get("tfCoverage"));
+			config = new ConfigInfo(normalizedDOA, absoluteDOA, tfCoverage);
+		} catch (IOException e1) {
+			LOGGER.error("Load configuration info aborted!",e1);
+		}
 	}
 
 	private static void filterModule(List<NewFileInfo> files, String module) {

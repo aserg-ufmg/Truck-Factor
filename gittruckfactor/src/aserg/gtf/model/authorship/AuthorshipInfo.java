@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import aserg.gtf.GitTruckFactor;
+
 @Entity
 public class AuthorshipInfo implements Comparable<AuthorshipInfo>{
 	@Id
@@ -23,6 +25,8 @@ public class AuthorshipInfo implements Comparable<AuthorshipInfo>{
 	private double doa;
 	private double doaMultAuthor;
 	private double doaAddDeliveries;
+	private float normalizedDOA= GitTruckFactor.config.getNormalizedDOA();;
+	private float absoluteDOA = GitTruckFactor.config.getAbsoluteDOA();;
 	
 	public AuthorshipInfo() {
 	}
@@ -31,7 +35,7 @@ public class AuthorshipInfo implements Comparable<AuthorshipInfo>{
 	public boolean isDOAAuthor() {
 		double bestFileDOA =  this.file.getBestDoaMult();
 		double normDOA = doaMultAuthor/bestFileDOA;
-		if (normDOA > 0.75 &&  (doaMultAuthor >= 3.293 || firstAuthor || secondaryAuthor))
+		if (normDOA > normalizedDOA &&  (doaMultAuthor >= absoluteDOA || firstAuthor || secondaryAuthor))
 			return true;		
 		else
 			return false;

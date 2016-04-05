@@ -11,6 +11,7 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
+import aserg.gtf.GitTruckFactor;
 import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.Developer;
 import aserg.gtf.model.authorship.File;
@@ -33,7 +34,7 @@ public class GreedyTruckFactor extends TruckFactor {
 		while(authorsMap.size()>0){
 			Float coverage = getCoverage(repFiles, authorsMap);
 			trucKFactorMap.put(factor++, coverage);
-			if (coverage<0.5)
+			if (coverage<GitTruckFactor.config.getTfCoverage())
 				break;			
 			removeBig(clonedRepFiles, authorsMap);
 		}
