@@ -26,8 +26,6 @@ public class DOACalculator extends AbstractTask<Repository>{
 	private Collection<LogCommitInfo> commits;
 	private List<NewFileInfo> files;
 
-	
-	
 	public DOACalculator(String repositoryPath, String repositoryName, Collection<LogCommitInfo> commits,
 			List<NewFileInfo> files) {
 		super(repositoryPath, repositoryName);
@@ -57,12 +55,6 @@ public class DOACalculator extends AbstractTask<Repository>{
 			reDAO.clear();
 		}
 	}
-	
-	
-
-
-
-	
 
 	private static List<File> getFiles(Repository repository, Collection<LogCommitInfo> commitFiles, List<NewFileInfo> filesInfo) {
 		List<File> tempfiles = new ArrayList<File>();		
@@ -77,8 +69,6 @@ public class DOACalculator extends AbstractTask<Repository>{
 		return tempfiles;
 	}
 	
-
-
 	private static Map<String, List<LogCommitFileInfo>> getCommitFilesMap(Collection<LogCommitInfo> commits) {
 		Map<String, List<LogCommitFileInfo>> map = new HashMap<String, List<LogCommitFileInfo>>();
 		for (LogCommitInfo commitInfo : commits) {
@@ -168,7 +158,8 @@ public class DOACalculator extends AbstractTask<Repository>{
 		
 	}
 	
-	/** Expand commitsfile list by adding renames history */
+	/** Expand commitsfile list by adding renames history 
+	 *  Only used when renames are not treated using git facilities */
 	private static List<LogCommitFileInfo> expandCommitFileList(
 			List<LogCommitFileInfo> logCommitFiles, Map<String, List<LogCommitFileInfo>> mapFiles) {
 		

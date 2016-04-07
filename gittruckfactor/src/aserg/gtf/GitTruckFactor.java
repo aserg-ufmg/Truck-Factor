@@ -132,7 +132,7 @@ public class GitTruckFactor {
 			//doaCalculator.persist(repository);
 			
 			TruckFactor truckFactor = new GreedyTruckFactor();
-			truckFactor.getTruckFactor(repository);
+			int tf = truckFactor.getTruckFactor(repository);
 			
 	}
 	
