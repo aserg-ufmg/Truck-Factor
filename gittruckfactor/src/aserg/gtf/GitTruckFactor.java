@@ -1,6 +1,8 @@
 package aserg.gtf;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -10,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -28,11 +31,18 @@ import aserg.gtf.truckfactor.GreedyTruckFactor;
 import aserg.gtf.truckfactor.TruckFactor;
 import aserg.gtf.util.FileInfoReader;
 import aserg.gtf.util.LineInfo;
+import aserg.gtf.util.ConfigInfo;
 
 public class GitTruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(GitTruckFactor.class);
+	private static Properties properties = new Properties();
+	private static InputStream input = null;
+	public static ConfigInfo config = null;
 	public static void main(String[] args) {
 		LOGGER.trace("GitTruckFactor starts");
+		
+		loadConfiguration();
+		
 		String repositoryPath = "";
 		String repositoryName = "";
 		if (args.length>0)
@@ -50,9 +60,6 @@ public class GitTruckFactor {
 		Map<String, List<LineInfo>> modulesInfo;
 		try {
 			filesInfo = FileInfoReader.getFileInfo("repo_info/filtered-files.txt");
-//			for (Entry<String, List<LineInfo>> entry : filesInfo.entrySet()) {
-//				LOGGER.info(entry.getKey() + ": Lines in filtered files: "+ filesInfo.size());
-//			}
 		} catch (IOException e) {
 			LOGGER.warn("Not possible to read repo_info/filtered-files.txt file. File filter step will not be executed!");
 			filesInfo = null;
@@ -71,16 +78,14 @@ public class GitTruckFactor {
 		}
 		
 		
-		GitLogExtractor gitLogExtractor = new GitLogExtractor(repositoryPath, repositoryName);	
-		NewAliasHandler aliasHandler =  aliasInfo == null ? null : new NewAliasHandler(aliasInfo.get(repositoryName));
 		FileInfoExtractor fileExtractor = new FileInfoExtractor(repositoryPath, repositoryName);
 		LinguistExtractor linguistExtractor =  new LinguistExtractor(repositoryPath, repositoryName);
+		NewAliasHandler aliasHandler =  aliasInfo == null ? null : new NewAliasHandler(aliasInfo.get(repositoryName));
+		GitLogExtractor gitLogExtractor = new GitLogExtractor(repositoryPath, repositoryName);	
 		
-		
-		
+		//Persist commit info
 		//gitLogExtractor.persist(commits);
 		
-		//printCoverageInTime(repositoryPath, repositoryName, filesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
 		
 		try {
 			calculateTF(repositoryPath, repositoryName, filesInfo, modulesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
@@ -94,42 +99,6 @@ public class GitTruckFactor {
 		LOGGER.trace("GitTruckFactor end");
 	}
 
-	//Test to calculate the authorship variation on time 
-	private static void printCoverageInTime(String repositoryPath,
-			String repositoryName, Map<String, List<LineInfo>> filesInfo,
-			FileInfoExtractor fileExtractor,
-			LinguistExtractor linguistExtractor,
-			GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws Exception {
-		
-		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.YEAR, 2015);
-		cal.set(Calendar.MONTH, Calendar.FEBRUARY);
-		cal.set(Calendar.DAY_OF_MONTH, 25);
-		String devsA[] = {"Yoann Delouis", "yDelouis"};
-		//String devsA[] = {"WonderCsabo", "Damien"};
- 		List<String> devs = Arrays.asList(devsA);
- 		
-
-		//cal.add(Calendar.MONTH, -24);
-
- 		for (int i = 0; i < 24; i++) {
- 			Map<String, LogCommitInfo> commits = gitLogExtractor.execute();
- 			commits = aliasHandler.execute(repositoryName, commits);
- 			
- 			List<NewFileInfo> files = fileExtractor.execute();
- 			files = linguistExtractor.setNotLinguist(files);
- 			if (filesInfo != null)
- 				applyFilterFiles(filesInfo.get(repositoryName), files);
- 			
- 			Map<String, LogCommitInfo> newCommits = filterCommitsByDate(commits, cal.getTime());
-			DOACalculator doaCalculator = new DOACalculator(repositoryPath,	repositoryName, newCommits.values(), files);
-			Repository repository = doaCalculator.execute();
-			printCoverage(repository, devs, cal);
-			
-			cal.add(Calendar.MONTH, -1);
-		}
-	}
-	
 	private static void calculateTF(String repositoryPath,
 			String repositoryName, 
 			Map<String, List<LineInfo>> filesInfo, 
@@ -153,21 +122,31 @@ public class GitTruckFactor {
 			if(modulesInfo != null && modulesInfo.containsKey(repositoryName))
 				setModules(modulesInfo.get(repositoryName), files);
 			
-			//filterByModule(files, "net");
-			
-			//applyRegexFilter(files, "^Library/Formula/.*");
-			//applyRegexSelect(files, "^kernel/.*");
-			
-			
+			//Persist file info
 			//fileExtractor.persist(files);
 			
 			DOACalculator doaCalculator = new DOACalculator(repositoryPath, repositoryName, commits.values(), files);
 			Repository repository = doaCalculator.execute();
+			
+			//Persist authors info
 			//doaCalculator.persist(repository);
 			
 			TruckFactor truckFactor = new GreedyTruckFactor();
-			truckFactor.getTruckFactor(repository);
+			int tf = truckFactor.getTruckFactor(repository);
 			
+	}
+	
+	private static void loadConfiguration() {
+		try {
+			input = new FileInputStream("config.properties");
+			properties.load(input);
+			float normalizedDOA = Float.parseFloat((String) properties.get("normalizedDOA"));
+			float absoluteDOA = Float.parseFloat((String) properties.get("absoluteDOA"));
+			float tfCoverage = Float.parseFloat((String) properties.get("tfCoverage"));
+			config = new ConfigInfo(normalizedDOA, absoluteDOA, tfCoverage);
+		} catch (IOException e1) {
+			LOGGER.error("Load configuration info aborted!",e1);
+		}
 	}
 
 	private static void filterModule(List<NewFileInfo> files, String module) {
@@ -298,4 +277,39 @@ public class GitTruckFactor {
 		}
 	}
 
+	//Test: calculates the authorship variation on time 
+	private static void printCoverageInTime(String repositoryPath,
+				String repositoryName, Map<String, List<LineInfo>> filesInfo,
+				FileInfoExtractor fileExtractor,
+				LinguistExtractor linguistExtractor,
+				GitLogExtractor gitLogExtractor, NewAliasHandler aliasHandler) throws Exception {
+			
+			Calendar cal = Calendar.getInstance();
+			cal.set(Calendar.YEAR, 2015);
+			cal.set(Calendar.MONTH, Calendar.FEBRUARY);
+			cal.set(Calendar.DAY_OF_MONTH, 25);
+			String devsA[] = {"Yoann Delouis", "yDelouis"};
+			//String devsA[] = {"WonderCsabo", "Damien"};
+	 		List<String> devs = Arrays.asList(devsA);
+	 		
+
+			//cal.add(Calendar.MONTH, -24);
+
+	 		for (int i = 0; i < 24; i++) {
+	 			Map<String, LogCommitInfo> commits = gitLogExtractor.execute();
+	 			commits = aliasHandler.execute(repositoryName, commits);
+	 			
+	 			List<NewFileInfo> files = fileExtractor.execute();
+	 			files = linguistExtractor.setNotLinguist(files);
+	 			if (filesInfo != null)
+	 				applyFilterFiles(filesInfo.get(repositoryName), files);
+	 			
+	 			Map<String, LogCommitInfo> newCommits = filterCommitsByDate(commits, cal.getTime());
+				DOACalculator doaCalculator = new DOACalculator(repositoryPath,	repositoryName, newCommits.values(), files);
+				Repository repository = doaCalculator.execute();
+				printCoverage(repository, devs, cal);
+				
+				cal.add(Calendar.MONTH, -1);
+			}
+		}
 }

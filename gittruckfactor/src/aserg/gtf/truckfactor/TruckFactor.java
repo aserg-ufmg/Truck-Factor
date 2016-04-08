@@ -9,7 +9,7 @@ public abstract class TruckFactor {
 	public TruckFactor() {
 	}
 	
-	public abstract Map<Integer, Float> getTruckFactor(Repository repository);
+	public abstract int getTruckFactor(Repository repository);
 	
 	
 }
