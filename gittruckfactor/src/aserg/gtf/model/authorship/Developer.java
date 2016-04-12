@@ -30,6 +30,7 @@ public class Developer {
 	
 	@OneToMany(cascade = { CascadeType.REFRESH })
 	private List<AuthorshipInfo> authorshipInfos = new ArrayList<AuthorshipInfo>();
+	private List<File> authorshipFiles;
 	
 	public Developer() {
 		// TODO Auto-generated constructor stub
@@ -140,5 +141,15 @@ public class Developer {
 		this.origemDevelopers = origemDevelopers;
 	}
 	
+	public List<File> getAuthorshipFiles() {
+		if (authorshipFiles == null){
+			authorshipFiles = new ArrayList<File>();
+			for (AuthorshipInfo authorship : this.getAuthorshipInfos()) {
+				if (authorship.isDOAAuthor())
+					authorshipFiles.add(authorship.getFile());
+			}	
+		}			
+		return authorshipFiles;
+	}
 	
 }

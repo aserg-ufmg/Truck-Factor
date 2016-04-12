@@ -21,6 +21,7 @@ import aserg.gtf.model.LogCommitInfo;
 import aserg.gtf.model.NewFileInfo;
 import aserg.gtf.model.authorship.AuthorshipInfo;
 import aserg.gtf.model.authorship.Developer;
+import aserg.gtf.model.authorship.File;
 import aserg.gtf.model.authorship.Repository;
 import aserg.gtf.task.DOACalculator;
 import aserg.gtf.task.NewAliasHandler;
@@ -28,10 +29,11 @@ import aserg.gtf.task.extractor.FileInfoExtractor;
 import aserg.gtf.task.extractor.GitLogExtractor;
 import aserg.gtf.task.extractor.LinguistExtractor;
 import aserg.gtf.truckfactor.GreedyTruckFactor;
+import aserg.gtf.truckfactor.TFInfo;
 import aserg.gtf.truckfactor.TruckFactor;
+import aserg.gtf.util.ConfigInfo;
 import aserg.gtf.util.FileInfoReader;
 import aserg.gtf.util.LineInfo;
-import aserg.gtf.util.ConfigInfo;
 
 public class GitTruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(GitTruckFactor.class);
@@ -122,21 +124,25 @@ public class GitTruckFactor {
 			if(modulesInfo != null && modulesInfo.containsKey(repositoryName))
 				setModules(modulesInfo.get(repositoryName), files);
 			
+			filterModule(files, "driver");
+			
 			//Persist file info
 			//fileExtractor.persist(files);
 			
 			DOACalculator doaCalculator = new DOACalculator(repositoryPath, repositoryName, commits.values(), files);
 			Repository repository = doaCalculator.execute();
 			
+			//printFileAuthors(repository);
 			//Persist authors info
 			//doaCalculator.persist(repository);
 			
 			TruckFactor truckFactor = new GreedyTruckFactor();
-			int tf = truckFactor.getTruckFactor(repository);
+			TFInfo tf= truckFactor.getTruckFactor(repository);
+			System.out.println(tf);
 			
 	}
-	
-	private static void loadConfiguration() {
+
+	public static void loadConfiguration() {
 		try {
 			input = new FileInputStream("config.properties");
 			properties.load(input);
