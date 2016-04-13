@@ -1,6 +1,5 @@
 package aserg.gtf.dao;
 
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,8 +9,6 @@ import javax.persistence.Query;
 
 import aserg.gtf.model.FileType;
 import aserg.gtf.model.NewFileInfo;
-import aserg.gtf.model.ProjectInfo;
-import aserg.gtf.model.authorship.DeveloperAuthorshipInfo;
 
 public class NewFileInfoDAO extends GenericDAO<NewFileInfo>{
 
