@@ -124,8 +124,6 @@ public class GitTruckFactor {
 			if(modulesInfo != null && modulesInfo.containsKey(repositoryName))
 				setModules(modulesInfo.get(repositoryName), files);
 			
-			filterModule(files, "driver");
-			
 			//Persist file info
 			//fileExtractor.persist(files);
 			
