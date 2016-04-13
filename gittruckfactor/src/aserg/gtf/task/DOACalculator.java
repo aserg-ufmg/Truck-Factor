@@ -62,8 +62,8 @@ public class DOACalculator extends AbstractTask<Repository>{
 		for (NewFileInfo fileInfo : filesInfo) {
 			if (!fileInfo.getFiltered()){
 				File file = new File(fileInfo.getPath());
-				setFileHistory(file, repository, fileInfo, mapFiles);
-				tempfiles.add(file);
+				if (setFileHistory(file, repository, fileInfo, mapFiles))
+					tempfiles.add(file);
 			}
 		}		
 		return tempfiles;
@@ -85,12 +85,12 @@ public class DOACalculator extends AbstractTask<Repository>{
 	}
 	
 
-	private static void setFileHistory(File file, Repository repository, NewFileInfo fileInfo, Map<String, List<LogCommitFileInfo>> mapFiles) {
+	private static boolean setFileHistory(File file, Repository repository, NewFileInfo fileInfo, Map<String, List<LogCommitFileInfo>> mapFiles) {
 		List<LogCommitFileInfo> fileCommits = mapFiles.get(fileInfo.getPath());
 		// Rarely, but some files do not have any commit. Should be verified each case to understand the impact. Normally is irrelevant. 
 		if (fileCommits == null){
 			LOGGER.warn("No commits for " + file);
-			return;
+			return false;
 		}
 			
 		List<LogCommitFileInfo> logFilesObjectInfo = expandCommitFileList(fileCommits, mapFiles);
@@ -155,7 +155,7 @@ public class DOACalculator extends AbstractTask<Repository>{
 			}	
 		}
 		
-		
+		return true;
 	}
 	
 	/** Expand commitsfile list by adding renames history 

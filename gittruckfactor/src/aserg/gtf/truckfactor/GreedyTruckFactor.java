@@ -20,26 +20,26 @@ import aserg.gtf.model.authorship.Repository;
 public class GreedyTruckFactor extends TruckFactor {
 	private static final Logger LOGGER = Logger.getLogger(TruckFactor.class);
 
-	private List<String> tfAuthorInfo = new ArrayList<String>();
+	private TFInfo tfInfo = new TFInfo();
 	
 	@Override
-	public int getTruckFactor(Repository repository) {
-		Map<Integer, Float> trucKFactorMap = new HashMap<Integer, Float>();
+	public TFInfo getTruckFactor(Repository repository) {
 		Map<Developer, Set<File>> authorsMap = getFilesAuthorMap(repository);
-		
 		//GREDDY TRUCK FACTOR ALGORITHM		
 		int repFilesSize = repository.getFiles().size();
 		int factor = 0;
+		float coverage = 1;
 		while(authorsMap.size()>0){
-			Float coverage = getCoverage(repFilesSize, authorsMap);
-			trucKFactorMap.put(factor, coverage);
+			coverage = getCoverage(repFilesSize, authorsMap);
 			if (coverage<GitTruckFactor.config.getTfCoverage())
 				break;			
 			removeTopAuthor(repFilesSize, authorsMap);
 			factor++;
 		}
-		printTF(repository.getFullName(), trucKFactorMap);
-		return factor;
+		tfInfo.setCoverage(coverage);
+		tfInfo.setTf(factor);
+		tfInfo.setTotalFiles(repFilesSize);
+		return tfInfo;
 	}
 	
 	private Map<Developer, Set<File>> getFilesAuthorMap(Repository repository){
@@ -80,22 +80,10 @@ public class GreedyTruckFactor extends TruckFactor {
 				biggerDev = entry.getKey();
 			}
 		}
-		tfAuthorInfo.add(String.format("%s;%d;%.2f", biggerDev.getName(), biggerNumber, ((float)biggerNumber)/repFilesSize*100));
+		tfInfo.addDeveloper(biggerDev);
 		authorsMap.remove(biggerDev);		
 	}
-	
-	
-	private void printTF(String repName, Map<Integer, Float> truckMap) {
-		if (!truckMap.isEmpty()){
-			float coverage = truckMap.size() == 1 ? 0f : truckMap.get(tfAuthorInfo.size())*100;
-			System.out.format("TF = %d (coverage = %.2f%%)\nTF authors (Developer;Files;Percentage):\n", tfAuthorInfo.size(), coverage);
-			for (String tfInfo : tfAuthorInfo) {
-				System.out.println(tfInfo);
-			}
-		}
-		else
-			LOGGER.error("No authorship information enough to calculate the TF. Verify the number of files and commit available after filter steps");
-	}
+
 	
 //	//HELP METHODS:  Used only for tests propose 
 	
