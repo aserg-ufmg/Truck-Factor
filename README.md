@@ -1,5 +1,5 @@
 # Truck-Factor
-Calculating the Truck-Factor of Popular GitHub Applications
+Calculating the Truck-Factor of git Applications
 
 ###Environment 
 The scripts for extract commit information from git repositories were developed using Shell and AWK. So, the execution environment must support those script languages.  Optionally, the ruby interpreter is required if you decide to use the Linguist library to automatically discard files like documentation and third-party libraries. See the specific Linguist requirements in [linguist page](https://github.com/github/linguist).
