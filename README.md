@@ -36,3 +36,7 @@ That information can improve the TF calculation results. The additional informat
 * Modules (`modules.txt`): map files to modules. 
   * Info pattern: `<git_repository_fullname>;<file_path>;<module_name>`
   * * Module calculation not implemented yet.
+
+## More Info
+
+Guilherme Avelino, Leonardo Passos, Andre Hora, Marco Tulio Valente. [A Novel Approach for Estimating Truck Factors](https://arxiv.org/abs/1604.06766). In 24th International Conference on Program Comprehension (ICPC), pages 1-10, 2016.
