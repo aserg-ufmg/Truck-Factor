@@ -1,14 +1,15 @@
 # Truck-Factor
 Calculating the Truck-Factor of git Applications
 
-###Environment 
-The scripts for extract commit information from git repositories were developed using Shell and AWK. So, the execution environment must support those script languages.  Optionally, the ruby interpreter is required if you decide to use the Linguist library to automatically discard files like documentation and third-party libraries. See the specific Linguist requirements in [linguist page](https://github.com/github/linguist).
+## Environment 
 
-###Usage
+The scripts for extract commit information from git repositories are implemented using Shell and AWK. So, the execution environment must support those script languages.  Optionally, the Ruby interpreter is required if you decide to use the Linguist library to automatically discard files like documentation and third-party libraries. See the specific Linguist requirements in [linguist page](https://github.com/github/linguist).
+
+## Usage
 
 Get the last version of the [truckfactor-tool](https://github.com/mtov/Truck-Factor/releases)
 
-In order to run the tool you need to perform some steps:
+To run the tool to perform these steps:
 
 1. Clone the repository to be analysed.
 	- example: ```git clone https://github.com/mtov/Truck-Factor.git```
@@ -26,9 +27,10 @@ In order to run the tool you need to perform some steps:
 	- command: ```java –jar gittruckfactor.jar <git_repository_path> <git_repository_fullname>```
 	- example: ```java –jar gittruckfactor.jar git/truck-factor mtov/Truck-Factor```
 
-###Optional Settings
-Repository specifc information can be provided using the files in the folder `repo_info`. 
-That information can improve the TF calculation results. The additional information supported are:
+## Optional Settings
+
+Repository specifc information can be provided using the files in the folder `repo_info`, which  can improve the TF calculation results. The additional information supported are:
+
 * Filtered files (`filtered-files.txt`): set files that must be discard before start the TF calculation. 
   * Info pattern: `<git_repository_fullname>;<file_path>;<filter_info>`
 * Aliases (`alias.txt`): set developers aliases.
