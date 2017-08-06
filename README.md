@@ -40,6 +40,26 @@ Repository specifc information can be provided using the files in the folder `re
   * Info pattern: `<git_repository_fullname>;<file_path>;<module_name>`
   * * Module calculation not implemented yet.
 
+## Example
+
+Here are the TF values as estimated by this tool for some popular GitHub projects (using data from November, 2016):
+
+* FreeCodeCamp: 1
+* Bootstrap: 3
+* D3: 1
+* React: 4
+* AngularJS: 6
+* Font-Awesome: 1
+* jquery: 4
+* electron: 1
+* tensorflow: 2
+* docker: 13
+* meteor: 5
+* swift: 5
+* vue: 1
+* rails: 11
+* atom: 4
+
 ## More Info
 
 Guilherme Avelino, Leonardo Passos, Andre Hora, Marco Tulio Valente. [A Novel Approach for Estimating Truck Factors](https://arxiv.org/abs/1604.06766). In 24th International Conference on Program Comprehension (ICPC), pages 1-10, 2016.
