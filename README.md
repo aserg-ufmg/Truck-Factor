@@ -1,6 +1,6 @@
 # Truck-Factor
 
-This is a tool for estimating the Truck Factor of projects, using information from commit history. Truck Factor (also known as Bus Factor or Lottery Number) is the minimal number of developers that have to be hit by a truck (or leave) before a project is incapacitated.
+This is a tool for estimating the Truck Factor of GitHub projects, using information from commit history. Truck Factor (also known as Bus Factor or Lottery Number) is the minimal number of developers that have to be hit by a truck (or leave) before a project is incapacitated.
 
 ## Environment 
 
