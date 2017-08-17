@@ -24,7 +24,7 @@ To run the tool to perform these steps:
 	- command: ```./linguist_script.sh <git_repository_path>```
 	- example: ```./linguist_script.sh git/truck-factor```
 	
-2. Execute the gittruckfactor tool. 
+3. Execute the gittruckfactor tool. 
 	- command: ```java –jar gittruckfactor.jar <git_repository_path> <git_repository_fullname>```
 	- example: ```java –jar gittruckfactor.jar git/truck-factor mtov/Truck-Factor```
 
