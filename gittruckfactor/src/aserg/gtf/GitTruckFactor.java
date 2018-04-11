@@ -90,7 +90,8 @@ public class GitTruckFactor {
 		
 		
 		try {
-			calculateTF(repositoryPath, repositoryName, filesInfo, modulesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
+			TFInfo tf = getTFInfo(repositoryPath, repositoryName, filesInfo, modulesInfo,	fileExtractor, linguistExtractor, gitLogExtractor,aliasHandler);
+			System.out.println(tf);
 		} catch (Exception e) {
 			LOGGER.error("TF calculation aborted!",e);
 		}
@@ -101,7 +102,7 @@ public class GitTruckFactor {
 		LOGGER.trace("GitTruckFactor end");
 	}
 
-	private static void calculateTF(String repositoryPath,
+	private static TFInfo getTFInfo(String repositoryPath,
 			String repositoryName, 
 			Map<String, List<LineInfo>> filesInfo, 
 			Map<String, List<LineInfo>> modulesInfo,
@@ -135,8 +136,7 @@ public class GitTruckFactor {
 			//doaCalculator.persist(repository);
 			
 			TruckFactor truckFactor = new GreedyTruckFactor();
-			TFInfo tf= truckFactor.getTruckFactor(repository);
-			System.out.println(tf);
+			return truckFactor.getTruckFactor(repository);
 			
 	}
 
