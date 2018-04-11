@@ -29,6 +29,7 @@ import aserg.gtf.task.extractor.FileInfoExtractor;
 import aserg.gtf.task.extractor.GitLogExtractor;
 import aserg.gtf.task.extractor.LinguistExtractor;
 import aserg.gtf.truckfactor.GreedyTruckFactor;
+import aserg.gtf.truckfactor.PrunedGreedyTruckFactor;
 import aserg.gtf.truckfactor.TFInfo;
 import aserg.gtf.truckfactor.TruckFactor;
 import aserg.gtf.util.ConfigInfo;
@@ -135,7 +136,7 @@ public class GitTruckFactor {
 			//Persist authors info
 			//doaCalculator.persist(repository);
 			
-			TruckFactor truckFactor = new GreedyTruckFactor();
+			TruckFactor truckFactor = new PrunedGreedyTruckFactor(config.getMinPercentage());
 			return truckFactor.getTruckFactor(repository);
 			
 	}
@@ -147,7 +148,8 @@ public class GitTruckFactor {
 			float normalizedDOA = Float.parseFloat((String) properties.get("normalizedDOA"));
 			float absoluteDOA = Float.parseFloat((String) properties.get("absoluteDOA"));
 			float tfCoverage = Float.parseFloat((String) properties.get("tfCoverage"));
-			config = new ConfigInfo(normalizedDOA, absoluteDOA, tfCoverage);
+			float minPercentage = Float.parseFloat((String) properties.get("minPercentage"));
+			config = new ConfigInfo(normalizedDOA, absoluteDOA, tfCoverage, minPercentage);
 		} catch (IOException e1) {
 			LOGGER.error("Load configuration info aborted!",e1);
 		}

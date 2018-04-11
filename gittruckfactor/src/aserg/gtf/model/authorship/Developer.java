@@ -151,5 +151,12 @@ public class Developer {
 		}			
 		return authorshipFiles;
 	}
+	public int getDevChanges(){
+		int count = 0;
+		for (AuthorshipInfo authorshipInfo : authorshipInfos) {
+			count+=(authorshipInfo.isFirstAuthor()||authorshipInfo.isSecondaryAuthor()?1:0)+authorshipInfo.getnDeliveries();
+		}
+		return count;
+	}
 	
 }
