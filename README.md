@@ -26,7 +26,7 @@ To run the tool to perform these steps:
 	
 3. Execute the gittruckfactor tool.
     - command: ```java –jar gittruckfactor.jar <git_repository_path> <git_repository_fullname>```
-    - example: ```java –jar gittruckfactor.jar git/truck-factor mtov/Truck-Factor```
+    - example: ```java –jar gittruckfactor.jar git/truck-factor aserg-ufmg/Truck-Factor```
 
 ## Optional Settings
 
@@ -39,6 +39,9 @@ Repository specifc information can be provided using the files in the folder `re
 * Modules (`modules.txt`): map files to modules. 
   * Info pattern: `<git_repository_fullname>;<file_path>;<module_name>`
   * * Module calculation not implemented yet.
+
+### Run-time settings
+Algorithm's variables can be set by modifying the `config.properties `file.
 
 ## Example
 
