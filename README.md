@@ -29,8 +29,8 @@ To run the tool to perform these steps:
         - example: ```./linguist_script.sh git/Truck-Factor```
 	
 3. Execute the gittruckfactor tool.
-    - command: ```java –jar gitdownloader-0.0.1-SNAPSHOT.jar <git_repository_path> <git_repository_fullname>```
-    - example: ```java –jar gitdownloader-0.0.1-SNAPSHOT.jar git/Truck-Factor aserg-ufmg/Truck-Factor```
+    - command: ```java –jar gittruckfactor-1.0.jar <git_repository_path> <git_repository_fullname>```
+    - example: ```java –jar gittruckfactor-1.0.jar git/Truck-Factor aserg-ufmg/Truck-Factor```
 
 ## Optional Settings
 
