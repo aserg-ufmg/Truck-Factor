@@ -16,7 +16,7 @@ To run the tool to perform these steps:
 	- example: ```git clone https://github.com/mtov/Truck-Factor.git```
 
 2. Build the necessary Java code.
-	- commands: ```cd gittruckfactor; mvn package```
+	- commands: ```cd Truck-Factor/gittruckfactor; mvn package```
 
 2. Execute the scripts to extract information from the git repository to be analyzed:
     1. Extract commit and file information. 
