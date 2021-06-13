@@ -20,13 +20,13 @@ To run the tool to perform these steps:
 
 2. Execute the scripts to extract information from the git repository to be analyzed:
     1. Extract commit and file information. 
-        - command: ```./commit_log_script.sh  <git_repository_path>```
-        - example: ```./commit_log_script.sh  git/Truck-Factor```
+        - command: ```./scripts/commit_log_script.sh  <git_repository_path>```
+        - example: ```./scripts/commit_log_script.sh  git/Truck-Factor```
 	
 	
     2. Extract files to be discard using Linguist library (Optional)
-        - command: ```./linguist_script.sh <git_repository_path>```
-        - example: ```./linguist_script.sh git/Truck-Factor```
+        - command: ```./scripts/linguist_script.sh <git_repository_path>```
+        - example: ```./scripts/linguist_script.sh git/Truck-Factor```
 	
 3. Execute the gittruckfactor tool.
     - command: ```java –jar gittruckfactor-1.0.jar <git_repository_path> <git_repository_fullname>```
