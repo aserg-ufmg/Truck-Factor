@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: 'If you use this tool in your work, please cite it as below.'
 authors:
-  - given-names: Guilherme Amaral Avelino
+  - given-names: Guilherme 
     family-names: Avelino
     email: gaa@ufpi.edu.br
     affiliation: UFPI
@@ -24,7 +24,7 @@ preferred-citation:
   type: conference-paper
   message: 'If you use this tool in your work, please cite it as below.'
   authors:
-  - given-names: Guilherme Amaral Avelino
+  - given-names: Guilherme 
     family-names: Avelino
     email: gaa@ufpi.edu.br
     affiliation: Federal University of Piaui (UFPI)
