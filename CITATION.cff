@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: 'If you use this tool in your work, please cite it as below.'
+authors:
+  - given-names: Guilherme Amaral Avelino
+    family-names: Avelino
+    email: gaa@ufpi.edu.br
+    affiliation: UFPI
+    orcid: 'https://orcid.org/0000-0002-8203-0638'
+  - given-names: Marco Tulio
+    family-names: Valente
+    email: mtvalente@gmail.com
+    affiliation: UFMG
+    orcid: 'https://orcid.org/0000-0002-8180-7548'
+title: 'A Tool for Estimating Truck-Factors'
+version: '1.1'
+date-released: '2016-04-13'
+url: 'https://github.com/aserg-ufmg/Truck-Facto'
+keywords:
+  - truck factor
+  - bus fctor
+  - github
+  - knowledge concentration
+preferred-citation:
+  type: conference-paper
+  message: 'If you use this tool in your work, please cite it as below.'
+  authors:
+  - given-names: Guilherme Amaral Avelino
+    family-names: Avelino
+    email: gaa@ufpi.edu.br
+    affiliation: Federal University of Piaui (UFPI)
+    orcid: 'https://orcid.org/0000-0002-8203-0638'
+  - given-names: Leonardo Passos
+    family-names: Passos
+    email: lpassos@gsd.uwaterloo.ca
+    affiliation: University of Waterloo
+    orcid: 'https://orcid.org/0000-0001-6591-993X'
+  - given-names: Andre Hora
+    family-names: Hora
+    email: hora@dcc.ufmg.br
+    affiliation: Federal University of Minas Gerais (UFMG)
+    orcid: 'https://orcid.org/0000-0003-4900-1330'
+  - given-names: Marco Tulio
+    family-names: Valente
+    email: mtov@dcc.ufmg.br
+    affiliation: Federal University of Minas Gerais (UFMG)
+    orcid: 'https://orcid.org/0000-0002-8180-7548'
+  doi: "10.1109/ICPC.2016.7503718"  
+  collection-title: "24th International Conference on Program Comprehension (ICPC'16)"
+  pages: 10
+  start: 1 # First page number
+  end: 10 # Last page number
+  title: "A novel approach for estimating Truck Factors"
+  year: 2016
