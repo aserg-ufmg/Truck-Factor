@@ -6,6 +6,9 @@ This is a tool for estimating the Truck Factor of GitHub projects, using informa
 
 The scripts for extract commit information from git repositories are implemented using Shell and AWK. So, the execution environment must support those script languages.  Optionally, the Ruby interpreter is required if you decide to use the Linguist library to automatically discard files like documentation and third-party libraries. See the specific Linguist requirements in [linguist page](https://github.com/github/linguist).
 
+> [!NOTE]
+> To use docker you can change the `git_repository_path` in `.env` file.
+
 ## Usage
 
 Get the last version of the [truckfactor-tool](https://github.com/mtov/Truck-Factor/releases)
