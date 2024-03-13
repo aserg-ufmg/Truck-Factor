@@ -6,6 +6,9 @@ This is a tool for estimating the Truck Factor of GitHub projects, using informa
 
 The scripts for extract commit information from git repositories are implemented using Shell and AWK. So, the execution environment must support those script languages.  Optionally, the Ruby interpreter is required if you decide to use the Linguist library to automatically discard files like documentation and third-party libraries. See the specific Linguist requirements in [linguist page](https://github.com/github/linguist).
 
+> [!NOTE]
+> To use docker you can change the `git_repository_path` in `.env` file.
+
 ## Usage
 
 Get the last version of the [truckfactor-tool](https://github.com/mtov/Truck-Factor/releases)
@@ -17,20 +20,24 @@ To run the tool to perform these steps:
 
 2. Build the necessary Java code.
 	- commands: ```cd Truck-Factor/gittruckfactor; mvn package```
+  - docker: ```cd Truck-Factor/gittruckfactor; docker compose jar```
 
 2. Execute the scripts to extract information from the git repository to be analyzed:
     1. Extract commit and file information. 
         - command: ```./scripts/commit_log_script.sh  <git_repository_path>```
         - example: ```./scripts/commit_log_script.sh  git/Truck-Factor```
+        - docker: ```docker compose commit_info```
 	
 	
     2. Extract files to be discard using Linguist library (Optional)
         - command: ```./scripts/linguist_script.sh <git_repository_path>```
         - example: ```./scripts/linguist_script.sh git/Truck-Factor```
+        - docker: ```docker compose linguist```
 	
 3. Execute the gittruckfactor tool.
     - command: ```java –jar gittruckfactor-1.0.jar <git_repository_path> <git_repository_fullname>```
     - example: ```java –jar gittruckfactor-1.0.jar git/Truck-Factor aserg-ufmg/Truck-Factor```
+    - docker: ```docker compose execute```
 
 ## Optional Settings
 

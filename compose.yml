@@ -1,0 +1,36 @@
+services:
+  linguist:
+    build: ./.docker/linguist
+    command: sh -c "ruby repo/gittruckfactor/scripts/linguist.rb repo/$REPO_DIR > ./repo/$REPO_DIR/linguistfiles.log"
+    env_file: .env
+    volumes:
+      - .:/repo
+  commit_info:
+    image: bitnami/git
+    command: 
+      - bin/sh 
+      - -c 
+      - | 
+        echo "Hola"
+        
+        cd repo/gittruckfactor/scripts
+        sh ./commit_log_script.sh /repo/$REPO_DIR repo/gittruckfactor/scripts
+    volumes:
+      - .:/repo
+  jar:
+    image: maven:3.3-jdk-8
+    command: sh -c "cd /repo && mvn package"
+    volumes:
+      - ./gittruckfactor:/repo
+      - ./maven-repo:/root/.m2
+  execute:
+    image: maven:3.3-jdk-8
+    command: 
+      - bin/sh 
+      - -c 
+      - |
+        ls
+        echo "$JAVA_HOME"
+        java -Dlog4j.configuration=file:///repo/gittruckfactor/target/log4j.xml -jar ./repo/gittruckfactor/target/gittruckfactor-1.0.jar repo/git aserg-ufmg/Truck-Factor
+    volumes:
+      - .:/repo
