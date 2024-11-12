@@ -20,24 +20,24 @@ To run the tool to perform these steps:
 
 2. Build the necessary Java code.
 	- commands: ```cd Truck-Factor/gittruckfactor; mvn package```
-  - docker: ```cd Truck-Factor/gittruckfactor; docker compose jar```
+  - docker: ```cd Truck-Factor/gittruckfactor; docker compose up jar```
 
 2. Execute the scripts to extract information from the git repository to be analyzed:
     1. Extract commit and file information. 
         - command: ```./scripts/commit_log_script.sh  <git_repository_path>```
         - example: ```./scripts/commit_log_script.sh  git/Truck-Factor```
-        - docker: ```docker compose commit_info```
+        - docker: ```docker compose up commit_info```
 	
 	
     2. Extract files to be discard using Linguist library (Optional)
         - command: ```./scripts/linguist_script.sh <git_repository_path>```
         - example: ```./scripts/linguist_script.sh git/Truck-Factor```
-        - docker: ```docker compose linguist```
+        - docker: ```docker compose up linguist```
 	
 3. Execute the gittruckfactor tool.
     - command: ```java –jar gittruckfactor-1.0.jar <git_repository_path> <git_repository_fullname>```
     - example: ```java –jar gittruckfactor-1.0.jar git/Truck-Factor aserg-ufmg/Truck-Factor```
-    - docker: ```docker compose execute```
+    - docker: ```docker compose up execute```
 
 ## Optional Settings
 
